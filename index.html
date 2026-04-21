@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pantheon Spirits — Odyssey Rum Bottle Supplier Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#FAF6F0;--bg-card:#FFFFFF;--bg-accent:#F5EEE3;--text:#1A1815;--text-secondary:#5A5550;--text-muted:#8A8278;
+  --accent:#A0622A;--accent-light:#C4824F;--accent-subtle:#E8D5B7;--accent-deep:#7A4820;
+  --border:#E5DFD5;--border-strong:#CFC5B4;
+  --success:#5A7A3F;--warning:#A05D2E;--danger:#9B3C2E;
+  --brand-clay:#FFEBCC;--brand-white:#FFFFFF;--brand-black:#404040;--brand-satin:#FFEFE5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;font-size:15px;padding:0 5%;min-height:100vh}
+.container{max-width:1180px;margin:0 auto;padding:2.5rem 0}
+
+.masthead{border-top:4px solid var(--text);border-bottom:1px solid var(--border-strong);padding:1.75rem 0 2rem;margin-bottom:0.5rem}
+.masthead-top{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);padding-bottom:1.75rem}
+.masthead h1{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-0.02em;line-height:1;margin-bottom:0.5rem}
+.masthead .subtitle{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.15rem,2.2vw,1.5rem);color:var(--accent-deep);margin-bottom:1.5rem;font-weight:400}
+.masthead .standfirst{font-size:1.02rem;color:var(--text-secondary);max-width:68ch;line-height:1.6}
+.masthead .byline{margin-top:1.25rem;display:flex;gap:1.75rem;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted)}
+.byline span strong{color:var(--text);font-weight:600}
+
+.tab-nav{display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--border-strong);position:sticky;top:0;background:var(--bg);z-index:10;margin:0 -5%;padding:0 5%;scrollbar-width:thin}
+.tab-btn{background:transparent;border:none;border-bottom:3px solid transparent;padding:1.1rem 1.5rem;font-family:'Inter',sans-serif;font-size:0.92rem;font-weight:500;color:var(--text-secondary);cursor:pointer;white-space:nowrap;transition:all 0.15s ease;letter-spacing:0.01em}
+.tab-btn:hover{color:var(--text);background:var(--bg-accent)}
+.tab-btn.active{color:var(--accent-deep);border-bottom-color:var(--accent);font-weight:600}
+
+.tab-panel{display:none;padding:2.5rem 0}
+.tab-panel.active{display:block;animation:fadeIn 0.25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.panel-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-0.015em;line-height:1.1}
+.panel-head .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:0.4rem;font-weight:500}
+.panel-head .lede{font-size:1.05rem;color:var(--text-secondary);max-width:60ch;margin-top:0.75rem}
+.btn-pdf{background:var(--text);color:var(--bg);border:none;padding:0.75rem 1.3rem;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.03em;cursor:pointer;display:inline-flex;align-items:center;gap:0.55rem;transition:background 0.15s;white-space:nowrap;border-radius:2px}
+.btn-pdf:hover{background:var(--accent-deep)}
+.btn-pdf::before{content:"↓";font-weight:700}
+
+.sub-nav{display:flex;gap:0.4rem;margin-bottom:2rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.sub-btn{background:transparent;border:none;padding:0.65rem 1.2rem;font-family:'Inter',sans-serif;font-size:0.88rem;color:var(--text-secondary);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;margin-bottom:-1px}
+.sub-btn:hover{color:var(--text)}
+.sub-btn.active{color:var(--accent-deep);border-bottom-color:var(--accent);font-weight:600}
+.sub-panel{display:none}
+.sub-panel.active{display:block}
+
+.production-method{background:var(--bg-accent);border-left:3px solid var(--accent);padding:1.5rem 1.75rem;margin-bottom:2.25rem;border-radius:0 2px 2px 0}
+.production-method .label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent-deep);font-weight:600;margin-bottom:0.6rem}
+.production-method h4{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)}
+.production-method p{font-size:0.95rem;color:var(--text);line-height:1.65}
+.regulatory-flag{background:#FDF6E9;border-left:3px solid var(--warning);padding:1rem 1.25rem;margin:1.25rem 0;font-size:0.92rem;color:var(--text);border-radius:0 2px 2px 0}
+.regulatory-flag strong{color:var(--warning)}
+
+.supplier-card{background:var(--bg-card);border:1px solid var(--border);padding:2rem 2.25rem;margin-bottom:1.5rem;border-radius:2px;position:relative}
+.rank-1{border-left:4px solid var(--accent)}
+.rank-2{border-left:4px solid var(--accent-light)}
+.rank-3{border-left:4px solid var(--border-strong)}
+.card-header{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;padding-bottom:1.25rem;margin-bottom:1.25rem;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.card-heading{flex:1;min-width:260px}
+.rank-tag{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);font-weight:600;margin-bottom:0.45rem;display:block}
+.supplier-card h3{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;line-height:1.15;letter-spacing:-0.01em;color:var(--text)}
+.card-meta{font-size:0.85rem;color:var(--text-muted);margin-top:0.3rem}
+.rating{display:flex;flex-direction:column;align-items:flex-end;gap:0.2rem;min-width:110px}
+.rating-label{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted)}
+.rating-value{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;color:var(--accent-deep);line-height:1}
+.rating-stars{color:var(--accent);font-size:0.95rem;letter-spacing:0.05em}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem 1.75rem;margin-bottom:1.25rem}
+.data-row{padding:0.35rem 0}
+.data-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:0.2rem;font-weight:500}
+.data-value{font-size:0.92rem;color:var(--text);line-height:1.5}
+.data-value a{color:var(--accent-deep);text-decoration:none;border-bottom:1px solid var(--accent-subtle)}
+.data-value a:hover{border-bottom-color:var(--accent)}
+.notes{background:var(--bg-accent);padding:1.1rem 1.3rem;margin-top:1rem;font-size:0.9rem;line-height:1.6;color:var(--text-secondary);border-radius:2px}
+.notes .notes-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-deep);font-weight:600;margin-bottom:0.5rem;display:block}
+.source-list{font-size:0.8rem;color:var(--text-muted);margin-top:0.8rem;padding-top:0.8rem;border-top:1px dashed var(--border);font-family:'JetBrains Mono',monospace;word-break:break-all}
+.source-list a{color:var(--text-muted);text-decoration:none;margin-right:1rem;line-height:1.8}
+.source-list a:hover{color:var(--accent-deep)}
+
+.price-highlight{font-weight:600;color:var(--accent-deep)}
+.estimate-tag{display:inline-block;background:var(--accent-subtle);color:var(--accent-deep);font-size:0.7rem;padding:0.1rem 0.45rem;border-radius:3px;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;margin-left:0.25rem;font-weight:600;text-transform:uppercase}
+.warning-tag{display:inline-block;background:#FBE6DC;color:var(--danger);font-size:0.7rem;padding:0.15rem 0.5rem;border-radius:3px;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;font-weight:600;text-transform:uppercase}
+.good-tag{display:inline-block;background:#E4EED6;color:var(--success);font-size:0.7rem;padding:0.15rem 0.5rem;border-radius:3px;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;font-weight:600;text-transform:uppercase}
+
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin:2rem 0 2.5rem}
+.summary-card{background:var(--bg-card);border:1px solid var(--border);padding:1.5rem;border-radius:2px;border-top:3px solid var(--accent)}
+.summary-card .category{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent-deep);font-weight:600;margin-bottom:0.5rem}
+.summary-card .top-pick{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;margin-bottom:0.5rem;line-height:1.15}
+.summary-card .desc{font-size:0.88rem;color:var(--text-secondary);line-height:1.55;margin-bottom:0.75rem}
+.summary-card .price{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:var(--text-muted)}
+.intro-prose{max-width:68ch;font-size:1.02rem;line-height:1.7;color:var(--text)}
+.intro-prose p{margin-bottom:1.1rem}
+.intro-prose h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;margin:2rem 0 0.75rem;letter-spacing:-0.01em}
+.intro-prose ul{margin:0.6rem 0 1.25rem 1.25rem}
+.intro-prose li{margin-bottom:0.4rem}
+.benchmark-callout{background:var(--text);color:var(--bg);padding:1.75rem 2rem;margin:2rem 0;border-radius:2px}
+.benchmark-callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent-light);margin-bottom:0.5rem}
+.benchmark-callout .figure{font-family:'Playfair Display',serif;font-size:2.25rem;font-weight:700;margin-bottom:0.4rem}
+.benchmark-callout .note{font-size:0.92rem;opacity:0.85}
+
+.regs-prose{max-width:75ch;font-size:0.96rem;line-height:1.7}
+.regs-prose h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);letter-spacing:-0.01em}
+.regs-prose h4{font-size:1.02rem;font-weight:600;margin:1.5rem 0 0.5rem;color:var(--text)}
+.regs-prose p{margin-bottom:1rem}
+.regs-prose ul{margin:0.6rem 0 1.25rem 1.5rem}
+.regs-prose li{margin-bottom:0.45rem}
+.regs-prose a{color:var(--accent-deep);text-decoration:none;border-bottom:1px solid var(--accent-subtle);word-break:break-word}
+.regs-prose a:hover{border-bottom-color:var(--accent)}
+.regs-prose strong{color:var(--text);font-weight:600}
+.regs-prose code{font-family:'JetBrains Mono',monospace;background:var(--bg-accent);padding:0.1rem 0.4rem;font-size:0.85em;border-radius:2px}
+table.regs-table{width:100%;border-collapse:collapse;margin:1rem 0 1.75rem;font-size:0.88rem}
+table.regs-table th,table.regs-table td{padding:0.65rem 0.85rem;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+table.regs-table thead th{background:var(--bg-accent);font-weight:600;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text)}
+table.regs-table tbody tr:hover{background:#FBF7EE}
+
+.mockup-studio{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+@media(max-width:900px){.mockup-studio{grid-template-columns:1fr}}
+.mockup-viewer{background:linear-gradient(180deg,#F5EEE3 0%,#EADDC5 100%);border:1px solid var(--border-strong);border-radius:4px;padding:2rem;min-height:600px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:inset 0 0 60px rgba(160,98,42,0.08)}
+.mockup-viewer::before{content:"";position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:260px;height:24px;background:radial-gradient(ellipse at center,rgba(0,0,0,0.22) 0%,rgba(0,0,0,0) 70%);filter:blur(3px);z-index:0}
+.bottle-svg-wrap{position:relative;z-index:1;filter:drop-shadow(0 8px 18px rgba(40,25,0,0.18));display:flex;align-items:center;justify-content:center;width:100%}
+.bottle-svg-wrap svg{max-height:540px;max-width:100%;width:auto;height:auto;display:block}
+.label-swap-btn{position:absolute;top:1rem;right:1rem;background:var(--text);color:var(--bg);border:none;padding:0.55rem 0.9rem;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:500;cursor:pointer;border-radius:3px;display:flex;align-items:center;gap:0.5rem;z-index:5;box-shadow:0 2px 8px rgba(40,25,0,0.22);transition:all 0.15s}
+.label-swap-btn:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.label-swap-btn .swap-icon{font-size:1.05rem;line-height:1}
+.label-swap-btn .swap-text{font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;text-transform:uppercase;font-size:0.72rem}
+.mockup-controls{display:flex;flex-direction:column;gap:1.5rem}
+.control-group{background:var(--bg-card);border:1px solid var(--border);border-radius:3px;padding:1.25rem 1.35rem}
+.control-group h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin-bottom:0.4rem}
+.control-group .control-sub{font-size:0.82rem;color:var(--text-muted);margin-bottom:0.9rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;text-transform:uppercase}
+.control-row{display:flex;gap:0.5rem;flex-wrap:wrap}
+.control-chip{background:var(--bg);border:1px solid var(--border);padding:0.55rem 0.95rem;font-size:0.85rem;cursor:pointer;border-radius:2px;transition:all 0.15s;font-family:'Inter',sans-serif;color:var(--text-secondary);flex:1;min-width:80px;text-align:center;position:relative}
+.control-chip:hover{border-color:var(--accent);color:var(--text)}
+.control-chip.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.control-chip .price-delta{display:block;font-size:0.68rem;font-family:'JetBrains Mono',monospace;opacity:0.7;margin-top:2px;letter-spacing:0.03em}
+.live-price{background:var(--text);color:var(--bg);padding:1.35rem 1.5rem;border-radius:3px}
+.live-price .price-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;opacity:0.7;margin-bottom:0.35rem}
+.live-price .price-figure{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1}
+.live-price .price-sub{font-size:0.8rem;opacity:0.7;margin-top:0.3rem}
+.live-price .price-stack{display:grid;grid-template-columns:1fr auto;gap:0.3rem 1rem;margin-top:0.85rem;padding-top:0.85rem;border-top:1px solid rgba(255,255,255,0.15);font-size:0.78rem;font-family:'JetBrains Mono',monospace}
+.live-price .price-stack span:nth-child(even){text-align:right}
+
+.variant-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0.6rem;margin-top:0.2rem}
+.variant-chip{background:var(--bg);border:1px solid var(--border);padding:0.75rem 0.5rem;font-size:0.78rem;cursor:pointer;border-radius:2px;text-align:center;transition:all 0.15s;display:flex;flex-direction:column;align-items:center;gap:0.35rem}
+.variant-chip svg{height:50px;width:auto}
+.variant-chip:hover{border-color:var(--accent);background:var(--bg-accent)}
+.variant-chip.active{border-color:var(--accent);background:var(--accent-subtle);color:var(--accent-deep);font-weight:600}
+.variant-chip .variant-name{font-family:'Inter',sans-serif;font-size:0.78rem;line-height:1.1}
+.variant-chip .variant-price{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--text-muted)}
+
+.cost-table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.75rem;font-size:0.91rem}
+.cost-table th,.cost-table td{padding:0.7rem 0.85rem;text-align:left;border-bottom:1px solid var(--border)}
+.cost-table thead th{background:var(--bg-accent);font-weight:600;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text)}
+.cost-table td.num{text-align:right;font-family:'JetBrains Mono',monospace;font-size:0.87rem}
+.cost-table tfoot td{font-weight:700;background:var(--bg-accent);border-top:2px solid var(--text)}
+.cost-table .component{font-weight:500}
+.cost-table .sub{color:var(--text-muted);font-size:0.82rem;padding-left:1.5rem}
+
+.chart-wrap{background:var(--bg-card);border:1px solid var(--border);border-radius:3px;padding:1.5rem;margin:1.5rem 0}
+.chart-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;margin-bottom:0.3rem}
+.chart-sub{font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;text-transform:uppercase}
+.chart-canvas-wrap{position:relative;height:360px;width:100%}
+
+.verdict-box{background:var(--brand-clay);border:1px solid var(--accent-light);padding:1.5rem 1.75rem;margin:1.75rem 0;border-radius:3px;position:relative}
+.verdict-box::before{content:"✽";position:absolute;top:0.8rem;right:1.2rem;color:var(--accent);font-size:1.4rem;opacity:0.6}
+.verdict-box .verdict-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent-deep);font-weight:600;margin-bottom:0.5rem}
+.verdict-box h4{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.75rem;color:var(--text)}
+.verdict-box p{font-size:0.95rem;color:var(--text);line-height:1.65;margin-bottom:0.8rem}
+.verdict-box p:last-child{margin-bottom:0}
+
+footer{margin-top:3rem;padding:2rem 0 3rem;border-top:1px solid var(--border-strong);font-size:0.82rem;color:var(--text-muted);display:flex;gap:2rem;flex-wrap:wrap;justify-content:space-between;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em;text-transform:uppercase}
+
+@media print{
+  body{background:white;padding:0}
+  .tab-nav,.sub-nav,.btn-pdf,footer,.mockup-controls{display:none!important}
+  .tab-panel{display:block!important;page-break-before:always}
+  .sub-panel{display:block!important}
+  .supplier-card{page-break-inside:avoid;border:1px solid #ccc}
+  .mockup-studio{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  body{padding:0 4%}
+  .panel-head{flex-direction:column;gap:1rem}
+  .btn-pdf{align-self:flex-start}
+  .card-header{flex-direction:column}
+  .rating{align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="container" id="reportRoot">
+
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Pantheon Spirits · Confidential Research</span>
+    <span>April 2026</span>
+  </div>
+  <h1>Glass &amp; Bottle Sourcing</h1>
+  <p class="subtitle">Supplier analysis for the Odyssey Rum launch bottle</p>
+  <p class="standfirst">This report evaluates two candidate European glass manufacturers for Odyssey Rum's launch bottle — Stoelzle Glass Group (Polish operation) and Vetreria Etrusca (Italy) — against an Art Deco specification, with full cost, logistics, and tooling analysis. A break-even model compares the full-custom mould path against the faster option of modifying an existing bottle from supplier stock.</p>
+  <div class="byline">
+    <span>Prepared for <strong>Pantheon Spirits Ltd</strong></span>
+    <span>Subject <strong>Odyssey Rum · 700ml · Flint · T-Cork</strong></span>
+    <span>First Order <strong>1,000 bottles</strong></span>
+    <span>Destination <strong>Roudham, Norfolk (NR16)</strong></span>
+  </div>
+</header>
+
+<nav class="tab-nav" role="tablist">
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="companies">Company Deep Dive</button>
+  <button class="tab-btn" data-tab="cost">Cost Breakdown</button>
+  <button class="tab-btn" data-tab="mockups">Bottle Mock-ups</button>
+  <button class="tab-btn" data-tab="logistics">Logistics &amp; MOQs</button>
+  <button class="tab-btn" data-tab="alternatives">Other Providers</button>
+</nav>
+
+<!-- ============ OVERVIEW TAB ============ -->
+<section class="tab-panel active" data-panel="overview">
+  <div class="panel-head">
+    <div>
+      <div class="eyebrow">Executive Summary</div>
+      <h2>The bottle is the brand.</h2>
+      <p class="lede">For a rum brand whose internal mandate is to "Make Rum Sexy Again," the glass carries as much weight as what's inside it. This report is the sourcing spine of that decision.</p>
+    </div>
+    <button class="btn-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+
+  <div class="intro-prose">
+    <p>Odyssey Rum's launch bottle must achieve three things simultaneously: read as distinctly Art Deco on the back bar, pass quality scrutiny at a premium retail tier, and land at a cost that preserves the brand's 16–20% wholesale margin. Those three requirements are in tension with each other — a fully bespoke Art Deco mould satisfies the first, the second, and <em>fails</em> the third at 1,000-bottle order volumes. Resolving that tension is what this document is about.</p>
+
+    <p>We assessed two shortlisted European glass manufacturers, Stoelzle Glass Group (Polish operation at Częstochowa) and Vetreria Etrusca (Montelupo Fiorentino, Tuscany). A gate-check on the broader European market added two further contenders that genuinely merit consideration: Saverglass (France) for its far deeper Art Deco stock catalogue, and Verallia UK (Leeds) for the structural advantage of domestic UK shipping post-Brexit. We explicitly considered — and eliminated — eight other candidates.</p>
+
+    <h3>The central question</h3>
+    <p>Should Odyssey commission a full custom mould to realise the exact ideal bottle design (ribbed sides, flat front panel, thick wavy base, short-neck T-cork finish), or modify an existing supplier bottle — most realistically Vetreria Etrusca's <em>Aurea Spirits</em> 700ml bottle (launched 2025) — to get within ~80% of the brief at a fraction of the tooling cost?</p>
+    <p><em>Note:</em> Vetreria's Monet Deco (the design the brief originally anchored on) is a 500ml-only bottle and does not fit Odyssey's 70cl launch volume. It does, however, become an excellent vehicle for a future 50cl limited-edition SKU.</p>
+
+    <p>The break-even maths in the Cost Breakdown tab answers this in pounds and pence. Short version: at a 12,000-bottle annual run-rate and a five-year mould life, the delta between the two paths is roughly <strong>£0.23 per bottle</strong>. Whether that delta is worth absorbing depends on how much incremental retail velocity a fully bespoke bottle drives versus a modified stock bottle dressed in Odyssey's label design.</p>
+
+    <h3>What's in each tab</h3>
+    <ul>
+      <li><strong>Company Deep Dive</strong> — full profiles of Stoelzle and Vetreria Etrusca: history, capability, certifications, customer base, named contacts, and honest quality analysis.</li>
+      <li><strong>Cost Breakdown</strong> — component-level landed cost per bottle for both suppliers at 1,000 / 5,000 / 25,000 / 50,000 unit order tiers. Closure alternatives (T-cork / BVS screw / synthetic / glass stopper) and glass colour alternatives (flint / extra-flint / smoke / sea-green tint) costed separately. Break-even analysis for custom vs. modified mould.</li>
+      <li><strong>Bottle Mock-ups</strong> — six SVG bottle renders matching the Art Deco brief, with interactive toggles for label artwork, label shape, label material, closure type, and embossing depth — each toggle shows live price impact.</li>
+      <li><strong>Logistics &amp; MOQs</strong> — freight costs Poland→NR16 and Italy→NR16, customs classification, regulatory checklist, MOQs and the commercial wins at volume tiers.</li>
+      <li><strong>Other Providers</strong> — Saverglass and Verallia UK, plus the disqualification list for transparency.</li>
+    </ul>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;margin:2.5rem 0 1rem;letter-spacing:-0.01em;">Shortlist at a glance</h3>
+  <div class="summary-grid">
+    <div class="summary-card" style="border-top-color:var(--accent)">
+      <div class="category">Primary · Italy</div>
+      <div class="top-pick">Vetreria Etrusca</div>
+      <div class="desc">Mid-sized Tuscan glassworks, 100+ years old. Aurea Spirits 700ml is the launch base; Monet Deco 500ml for a Year-2 limited edition. Modification path delivers Art Deco without full tooling spend.</div>
+      <div class="price">Best case · Aurea mod + Monet LE strategy</div>
+    </div>
+    <div class="summary-card" style="border-top-color:var(--accent-light)">
+      <div class="category">Primary · Poland</div>
+      <div class="top-pick">Stoelzle Glass Group</div>
+      <div class="desc">Tier-1 European glassworks with blue-chip spirits clients. Full bespoke capability but higher MOQ thresholds and custom mould economics less friendly at 1,000 units.</div>
+      <div class="price">Best case · Long-term scale partner</div>
+    </div>
+    <div class="summary-card" style="border-top-color:var(--success)">
+      <div class="category">Alternative · France</div>
+      <div class="top-pick">Saverglass</div>
+      <div class="desc">Deepest Art Deco stock library in Europe (SUPREME, ZENITH decanters). No custom mould needed if a catalogue bottle fits. Named UK sales coverage.</div>
+      <div class="price">Best case · Stock bottle at zero tooling</div>
+    </div>
+    <div class="summary-card" style="border-top-color:var(--success)">
+      <div class="category">Alternative · UK</div>
+      <div class="top-pick">Verallia UK (Leeds)</div>
+      <div class="desc">UK-domiciled — no customs, no Brexit friction, no currency risk. Selective Line includes an Art Deco-positioned premium flint used by UK craft spirits brands today.</div>
+      <div class="price">Best case · Domestic, no mould, fast</div>
+    </div>
+  </div>
+
+  <div class="benchmark-callout">
+    <div class="label">Commercial benchmark from your cost model</div>
+    <div class="figure">£6.00 / bottle</div>
+    <div class="note">Target landed cost of glass to preserve the £28 wholesale / 16.5% margin stack. At £9.00 landed, margin drops to ~7%. This constraint materially shapes the supplier decision — a fully bespoke Stoelzle bottle is probably above budget at 1,000 units; a modified Vetreria Etrusca mould or a Saverglass stock bottle are probably below it.</div>
+  </div>
+
+  <div class="verdict-box">
+    <div class="verdict-label">Early read — subject to supplier quotes</div>
+    <h4>The likely right call: Vetreria Etrusca, modified Aurea Spirits for launch</h4>
+    <p>Vetreria's Aurea Spirits bottle (700ml, Extra Flint, bar-top) is a purpose-designed premium spirits bottle launched in 2025 — the right capacity, the right closure, the right glass grade. Adding vertical rib embossing and a thickened wavy base via mould modification is a realistic £3k–£6k tooling spend, versus £18k–£25k for a fully custom Stoelzle mould. At 12,000 bottles/year, the bespoke premium is ~£0.23/bottle over a five-year mould life — real money for a startup.</p>
+    <p><strong>Approach Vetreria with a two-bottle commercial proposal.</strong> Aurea 700ml as the Odyssey launch bottle, Monet Deco 500ml as a Year-2 limited-edition line extension. Doubling the conversation doubles your negotiating leverage.</p>
+    <p>Stoelzle is the right partner when you hit 50,000+ bottles/year and are ready to capitalise a bespoke mould. Saverglass is the backup if Vetreria can't deliver clean modifications. Verallia UK is the "break glass in case of Brexit emergency" option.</p>
+    <p>This is an early read based on desk research — the real call will be made after both primaries quote. Next step: send the brief to both.</p>
+  </div>
+</section>
+
+<!-- ============ COMPANY DEEP DIVE TAB ============ -->
+<section class="tab-panel" data-panel="companies">
+  <div class="panel-head">
+    <div>
+      <div class="eyebrow">Full profiles</div>
+      <h2>Company deep dive</h2>
+      <p class="lede">Comprehensive research on both shortlisted suppliers — history, capability, customer base, quality, direct contacts, recent news.</p>
+    </div>
+    <button class="btn-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+  <div class="sub-nav">
+    <button class="sub-btn active" data-sub="companies:stoelzle">Stoelzle (Poland)</button>
+    <button class="sub-btn" data-sub="companies:etrusca">Vetreria Etrusca (Italy)</button>
+  </div>
+  <div class="sub-panel active" data-subpanel="companies:stoelzle" id="stoelzle-content">
+    <div class="supplier-card rank-1">
+      <div class="card-header">
+        <div class="card-heading">
+          <span class="rank-tag">Primary · Poland · Tier-1</span>
+          <h3>Stoelzle Glass Group — Częstochowa plant</h3>
+          <div class="card-meta">Founded 1805 · Privately held (CAG-Holding / Dr Cornelius Alexander Grupp, Austria) · 3,000 employees · 3.2 billion containers / year · 6 production sites across Europe + USA</div>
+        </div>
+        <div class="rating">
+          <span class="rating-label">Fit score</span>
+          <span class="rating-value">4.1 / 5</span>
+          <span class="rating-stars">★★★★☆</span>
+        </div>
+      </div>
+
+      <div class="data-grid">
+        <div class="data-row">
+          <div class="data-label">Polish plant address</div>
+          <div class="data-value">Stoelzle Częstochowa Sp. z o.o.<br>ul. Warszawska 347, 42-209 Częstochowa, Poland</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Plant heritage</div>
+          <div class="data-value">Founded 1897 as Huta Paulina. Joined Stoelzle Group in 2001. Today the <strong>largest plant in the entire group</strong> by capacity (~700 tonnes/day).</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Capability</div>
+          <div class="data-value">Two flint glass furnaces (Furnace 1 completed hot repair March 2026 with new recycled cullet dosing); coloured glass also produced. Integrated on-site decoration: acid etching, screen printing, laser engraving, lacquering, hot stamping.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Certifications</div>
+          <div class="data-value">ISO 9001:2015 (quality), ISO 14001 (environmental), ISO 45001 (occupational health &amp; safety), ISO 50001 (energy — awarded June 2025), BRCGS IOP (packaging, food-contact).</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Recent recognition</div>
+          <div class="data-value"><strong>Diageo Supplier of the Year 2025</strong>. UK Packaging Awards 2025 Luxury Pack of the Year (Highland Park 56 Years). Glass Focus Awards 2024 British Glass Company of the Year and Design of the Year (The Hearach whisky). No quality incidents or recalls found in recent trade press.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Known spirits clients</div>
+          <div class="data-value">Highland Park, The Macallan, Isle of Harris Distillers, Tarquin's Cornish Gin, Whitby Gin, Hearach Whisky, Diageo prestige range. Serves both craft and multinational brands.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Which plant serves spirits</div>
+          <div class="data-value">Stoelzle operates a two-plant spirits model: <strong>Knottingley (UK)</strong> is the formal "centre of excellence" for prestige design (195t/day, 95% spirits output). <strong>Częstochowa (Poland)</strong> is the scale production plant with decoration capability. For a Pantheon-sized run, the Polish plant would be the manufacturer; the UK commercial team manages the relationship.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">MOQs <span class="estimate-tag">Estimate</span></div>
+          <div class="data-value">Standard Collection (existing moulds): <strong>~2,000–5,000 bottles</strong>. Custom new-mould runs: <strong>~10,000–30,000 bottles</strong> typical floor. 1,000 bottles is below their custom threshold — realistically you'd need either a Standard Collection bottle, or a Year-2 volume commitment.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Tooling costs <span class="estimate-tag">Estimate</span></div>
+          <div class="data-value">New single-cavity custom mould: <strong>£15,000–£30,000</strong>. Modification of existing mould (e.g. to add wave base, adjust neck): <strong>£2,000–£8,000</strong>. Multi-cavity production moulds scale linearly.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Unit price (undecorated, flint) <span class="estimate-tag">Estimate</span></div>
+          <div class="data-value">£0.45–£0.90 ex-works for 700ml flint at tier-1 quality, with significant volume-based discounting. Decoration (embossing, acid frost, screen print) typically adds 15–50%.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Export to UK</div>
+          <div class="data-value">Well-established lane. 1,400–1,600km road, 2–3 days transit. Stoelzle's own logistics network (150 subcontractors, 99.88% on-time in full, 95% Euro 6 fleet). Known UK customers already onboard.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Sustainability</div>
+          <div class="data-value">New cullet dosing system at Częstochowa Furnace 1 (March 2026) increases recycled content. ISO 50001 energy management (awarded 2025). Group-wide: Knottingley UK plant has a new electric arc "hybrid" furnace (first in UK glass).</div>
+        </div>
+      </div>
+
+      <div class="production-method">
+        <div class="label">The Art Deco question</div>
+        <h4>NELSON and ICE — closest Standard Collection matches</h4>
+        <p>Stoelzle's Standard Collection (<a href="https://stoelzlespirits.com/standard-collection-range">stoelzlespirits.com/standard-collection-range</a>) has ten 700ml stock bottles. Two are plausible Art Deco starting points for Odyssey:</p>
+        <p style="margin-top:0.8rem;"><strong>NELSON</strong> — 750g, 227.7mm tall, Ø86.1mm, conical neck with groove and ring. This is the strongest Deco silhouette in Stoelzle's catalogue. Read-through Art Deco could be achieved via acid-etch frosting on the sides (creating the visual of vertical ribs without new tooling) plus embossed branding on the front panel. Getting you probably 70% of the brief at zero mould cost.</p>
+        <p style="margin-top:0.6rem;"><strong>ICE</strong> — 750g, 196.7mm tall, 83.9×83.9mm square form, angular shoulders, vintage ring. Square-form proxy for the ideal's rectangular profile. Again, decoration layer rather than new mould.</p>
+        <p style="margin-top:0.6rem;">Neither is a perfect match to the ideal, but both clear the quality bar and eliminate tooling cost — turning Stoelzle from "premium supplier requiring 10k+ MOQ" into "viable at 1,000 units."</p>
+      </div>
+
+      <div class="notes"><span class="notes-label">Strategic observation</span>Stoelzle's UK plant at Knottingley (Stoelzle Flaconnage, West Yorkshire) is the same group — and eliminates Brexit friction on the origin side. Worth explicitly asking whether any of their Standard Collection can be served from UK stock. This effectively converts "Stoelzle Poland" into "Stoelzle UK" on the shipping question and materially changes the Italy-vs-Poland calculus.</div>
+
+      <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin:1.5rem 0 0.75rem;color:var(--text);">Direct contacts</h4>
+      <div class="data-grid">
+        <div class="data-row">
+          <div class="data-label">First point of contact — UK Prestige Spirits</div>
+          <div class="data-value"><strong>Martin McShane</strong> — Sales Manager, Prestige Spirits (UK &amp; Ireland)<br><a href="https://www.linkedin.com/in/martin-mcshane-7025a711">linkedin.com/in/martin-mcshane-7025a711</a></div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Shared spirits mailbox</div>
+          <div class="data-value"><a href="mailto:spirits@stoelzle.com">spirits@stoelzle.com</a> — routed to UK, Poland, France, USA offices</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">UK phone</div>
+          <div class="data-value">+44 1977 607 124 (Knottingley)</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Poland plant phone</div>
+          <div class="data-value">+48 34 360 45 00 (Częstochowa)</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Poland Commercial GM</div>
+          <div class="data-value">Piotr Nowak (Glass International press, April 2026 — furnace restart ceremony)</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Poland Technical GM</div>
+          <div class="data-value">Piotr Jakubaszko (same source)</div>
+        </div>
+      </div>
+
+      <div class="source-list">
+        Sources:
+        <a href="https://www.stoelzle.com/en/markets/spirits/">stoelzle.com/en/markets/spirits</a>
+        <a href="https://stoelzlespirits.com/standard-collection-range">stoelzlespirits.com/standard-collection-range</a>
+        <a href="https://www.stoelzle.com/en/locations/stoelzle-czestochowa/">stoelzle.com/en/locations/stoelzle-czestochowa</a>
+        <a href="https://www.glass-international.com/news/stoelzle-czestochowa-completes-hot-repair">glass-international.com — furnace hot repair April 2026</a>
+        <a href="https://www.packagingnews.co.uk/features/uk-packaging-awards-2025">UK Packaging Awards 2025</a>
+      </div>
+    </div>
+  </div>
+  <div class="sub-panel" data-subpanel="companies:etrusca" id="etrusca-content">
+    <div class="supplier-card rank-1">
+      <div class="card-header">
+        <div class="card-heading">
+          <span class="rank-tag">Primary · Italy · Mid-sized premium</span>
+          <h3>Vetreria Etrusca S.p.A.</h3>
+          <div class="card-meta">Founded 1920 · Italian-owned · premium spirits, wine, olive oil · TÜV certified · ISO 50001</div>
+        </div>
+        <div class="rating">
+          <span class="rating-label">Fit score</span>
+          <span class="rating-value">4.3 / 5</span>
+          <span class="rating-stars">★★★★☆</span>
+        </div>
+      </div>
+
+      <div class="data-grid">
+        <div class="data-row">
+          <div class="data-label">Factory &amp; head office address</div>
+          <div class="data-value">Vetreria Etrusca S.p.A.<br>Via Maremmana, 70<br>50056 Montelupo Fiorentino, Firenze, Italy</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Contact</div>
+          <div class="data-value"><strong>+39 0571 7551</strong><br><a href="mailto:info@vetreriaetrusca.it">info@vetreriaetrusca.it</a><br>VAT: IT 00436960488<br><a href="https://www.linkedin.com/company/vetreria-etrusca/">LinkedIn</a> · <a href="https://www.instagram.com/vetreriaetrusca/">Instagram</a></div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Heritage</div>
+          <div class="data-value">Founded <strong>1920 in Empoli</strong>, Tuscany. Name "Etrusca" chosen deliberately to connect to the Etruscan glassmaking tradition being revived in 1920s Italy. In 1958, Cooperativa Operai Vetrai (founded 1951, Montelupo Fiorentino, managed by Giovanni Bartolozzi) absorbed the original Etrusca and consolidated operations at Montelupo. Still independently Italian-owned. Over a century of continuous glass production.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Plant &amp; capacity</div>
+          <div class="data-value">Two furnaces at Montelupo Fiorentino. 2018 major plant renovation investment. 2020 DeNoX system installed for emissions reduction. <strong>A completely new melting furnace is under construction as of 2025</strong> — major investment in efficiency and sustainability, designed to support capacity growth. Group-wide sample range of 1,000+ bottle models.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Certifications</div>
+          <div class="data-value"><strong>TÜV</strong> (quality, environment, workplace safety) · <strong>ISO 50001</strong> (energy management). Operates an Integrated Management System (QASE — Quality, Environment, Safety, Energy).</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Glass colours</div>
+          <div class="data-value">Three proprietary options:
+          <ul style="margin:0.4rem 0 0 1.2rem;font-size:0.92rem">
+            <li><strong>EB — Extra Bianco</strong> (extra-flint, crystal-clear)</li>
+            <li><strong>MB — Mezzo Bianco</strong> (high recycled-content flint, soft hue; distillery-favoured)</li>
+            <li><strong>VE — Verdetrusco®</strong> (patented Tuscan green, 99% UV protection verified by Stazione Sperimentale del Vetro)</li>
+          </ul></div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Sustainability profile <span class="good-tag">Strong</span></div>
+          <div class="data-value">Mezzo Bianco uses a high % of recycled glass cullet — "particularly appreciated in the distillery sector." DeNoX emissions system (2020). ISO 50001. New-furnace investment (2025) designed around efficiency gains. Full circular-economy messaging throughout their documentation. If sustainability ever becomes a Pantheon marketing angle, Vetreria Etrusca is a genuinely credible story.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Key industry positioning</div>
+          <div class="data-value">Market leader in premium olive oil packaging (Fiorentina, Olea, Colette, Morandi collections). Strong in premium wines (Borgognotta Prestige Elite — 2025 launch). Spirits is a deliberate growth vertical — <strong>Aurea Spirits collection launched 2025</strong> explicitly targeting premium distillates.</div>
+        </div>
+      </div>
+
+      <div class="production-method">
+        <div class="label">The Art Deco question — key finding</div>
+        <h4>Aurea Spirits is the right starting point for Odyssey, not Monet Deco</h4>
+        <p><strong>Monet Deco is 500ml only</strong> — verified on their live catalogue. It's a strong Art Deco silhouette, but at 500ml it doesn't fit Odyssey's 700ml spec. Scaling a bottle from 500ml to 700ml requires a new parent mould, not a modification — so the "low-tweak" economics are narrower than initially assumed.</p>
+        <p style="margin-top:0.6rem;"><strong>Aurea Spirits</strong> (launched 2025) is available in both 500ml and 700ml, with bar-top cork or GPI screw finish, in Extra Flint. Built around the golden-ratio proportion. <em>This</em> is the bottle to modify for Odyssey — it gives you the right volume, the right closure, and the right glass grade as a starting point. Add vertical rib embossing and a thickened wavy base and it reads unmistakably Art Deco.</p>
+        <p style="margin-top:0.6rem;"><strong>Monet Deco at 500ml is a strategic asset for a limited-edition SKU.</strong> Odyssey's Year 2 could include a 50cl "Navigator's Edition" or "Cask Strength" release in the Monet Deco bottle — no new mould work, a reason to return to Vetreria, and it visually differentiates the line extension on the back bar from the 70cl flagship.</p>
+      </div>
+
+      <div class="notes"><span class="notes-label">Revised recommendation</span>Approach Vetreria with two bottles in the conversation, not one: Aurea Spirits 700ml as the Odyssey launch bottle (base for modification to add ribs + wave base), and Monet Deco 500ml as a future line extension. This doubles the size of the commercial relationship you're offering them, which materially improves your negotiating position.</div>
+
+      <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin:1.5rem 0 0.75rem;color:var(--text);">MOQs and tooling <span class="estimate-tag">Estimate — confirm on enquiry</span></h4>
+      <div class="data-grid">
+        <div class="data-row">
+          <div class="data-label">Ex-catalogue MOQ (Aurea, Monet Deco)</div>
+          <div class="data-value">Typically 1,500–3,000 bottles for Italian mid-sized glassworks at this tier. A 1,000-bottle order may be accepted at a ~5–10% unit premium, or pooled into a 1,500 minimum buy.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Catalogue bottle with minor mould modifications</div>
+          <div class="data-value">Typically 3,000–5,000 bottle MOQ for the first run (to amortise the tooling change). Modifications to existing mould (add rib pattern, deepen base, tweak neck): £3,000–£6,000 one-off.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Full custom mould</div>
+          <div class="data-value">~10,000 bottles minimum. Tooling £10,000–£18,000. Italian mid-tier glassworks are typically 15–30% cheaper than tier-1 Austrian/German tooling shops.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Unit price (Extra Flint, bar-top, undecorated) <span class="estimate-tag">Estimate</span></div>
+          <div class="data-value">£0.80–£1.20 ex-works for 700ml at 3,000–5,000 volumes, premium positioning. Decoration (rib emboss, screen print, acid etch, hot stamp) typically adds 20–60%.</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">UK export experience</div>
+          <div class="data-value">Regular Italy→UK exports via standard groupage / LTL carriers. No named UK craft spirits customer publicly listed — worth asking for their UK reference list directly during initial enquiry.</div>
+        </div>
+      </div>
+
+      <div class="source-list">
+        Sources:
+        <a href="https://www.vetreriaetrusca.it/en/company">vetreriaetrusca.it/en/company</a>
+        <a href="https://www.vetreriaetrusca.it/en/catalog/list#!/txt(monet)">Monet &amp; Monet Deco catalogue</a>
+        <a href="https://www.vetreriaetrusca.it/en/catalog/list#!/txt(aurea)">Aurea Spirits catalogue</a>
+        <a href="https://www.vetreriaetrusca.it/en/news.1/news.667/aurea-spirits-|-the-harmony-of-proportion-in-the-world-of-spirits">Aurea Spirits launch announcement</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COST BREAKDOWN TAB ============ -->
+<section class="tab-panel" data-panel="cost">
+  <div class="panel-head">
+    <div>
+      <div class="eyebrow">Landed cost analysis</div>
+      <h2>Cost breakdown</h2>
+      <p class="lede">Component-level pricing for the ideal bottle at both suppliers, at 1,000 / 5,000 / 25,000 / 50,000 bottle tiers. Closure, glass colour, and mould-modification alternatives costed separately. Break-even analysis for custom vs. modified-stock mould.</p>
+    </div>
+    <button class="btn-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+  <div class="sub-nav">
+    <button class="sub-btn active" data-sub="cost:bottle">Bottle components</button>
+    <button class="sub-btn" data-sub="cost:closures">Closures</button>
+    <button class="sub-btn" data-sub="cost:colour">Glass colour</button>
+    <button class="sub-btn" data-sub="cost:shipping">Shipping &amp; customs</button>
+    <button class="sub-btn" data-sub="cost:breakeven">Break-even: custom vs. modified mould</button>
+  </div>
+
+  <div class="sub-panel active" data-subpanel="cost:bottle">
+    <div class="intro-prose">
+      <p>Unit economics for the ideal Odyssey Rum bottle (700ml flint, Art Deco ribbing, flat front panel, thick wavy base, short-neck T-cork finish, ~600–650g empty weight) at four order tiers. Figures are component-level desk estimates derived from published EU glassworks price bands, pallet yield calculations, and the shipping quotes in the next sub-tab. <span class="estimate-tag">Estimate</span> until supplier quotes confirmed.</p>
+    </div>
+
+    <div class="benchmark-callout" style="margin-bottom:2.5rem">
+      <div class="label">Three-path bottom line — the investor view</div>
+      <div class="figure" style="font-size:1.45rem;margin-bottom:1rem;line-height:1.25;">At 1,000 bottles first-order · £6/bottle target landed cost</div>
+      <table style="width:100%;color:var(--bg);font-size:0.88rem;font-family:'Inter',sans-serif;border-collapse:collapse;margin-top:0.5rem;">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.18)">
+            <th style="text-align:left;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Path</th>
+            <th style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Tooling £</th>
+            <th style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Per bottle (1k, naïve)</th>
+            <th style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Per bottle (amortised 60k)</th>
+            <th style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.7">Total Order @ 1k</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08)"><td style="padding:0.55rem 0.3rem">Vetreria — modified Aurea Spirits</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace">£4,500</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace">£8.10</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent-light)">£3.67</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-weight:700">£8,100</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08)"><td style="padding:0.55rem 0.3rem">Vetreria — full custom mould</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace">£13,500</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace">£17.22</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent-light)">£3.85</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-weight:700">£17,220</td></tr>
+          <tr><td style="padding:0.55rem 0.3rem">Stoelzle — full custom mould</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace">£18,000</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace">£21.74</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent-light)">£3.97</td><td style="text-align:right;padding:0.55rem 0.3rem;font-family:'JetBrains Mono',monospace;font-weight:700">£21,740</td></tr>
+        </tbody>
+      </table>
+      <div class="note" style="margin-top:1rem">Vetreria's full custom path is the most under-appreciated option: <strong>25% cheaper tooling</strong> than Stoelzle (Italian mid-tier glassworks price moulds 15–30% below Austrian/German tier-1), while still delivering a fully bespoke 700ml bottle you own outright.</div>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;margin:2rem 0 0.5rem;">Path A · Vetreria Etrusca — modified Aurea Spirits</h3>
+    <p style="color:var(--text-muted);font-size:0.88rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1rem;">Low-mod path · Aurea 700ml existing mould as basis · ~£4,500 tooling</p>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Component</th><th class="num">1,000 bottles</th><th class="num">5,000</th><th class="num">25,000</th><th class="num">50,000</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">Glass body (ex-works)</td><td class="num">£2.80</td><td class="num">£2.30</td><td class="num">£1.85</td><td class="num">£1.60</td></tr>
+        <tr><td class="sub">— flint glass, 650g empty, vertical rib emboss</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Mould amortisation</td><td class="num">£4.50</td><td class="num">£0.90</td><td class="num">£0.18</td><td class="num">£0.09</td></tr>
+        <tr><td class="sub">— £4.5k modification cost, amortised against first order</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Base modification (wave)</td><td class="num">£0.30</td><td class="num">£0.25</td><td class="num">£0.20</td><td class="num">£0.18</td></tr>
+        <tr><td class="component">Freight (door-to-door to NR16)</td><td class="num">£0.38</td><td class="num">£0.20</td><td class="num">£0.14</td><td class="num">£0.12</td></tr>
+        <tr><td class="component">Customs + broker</td><td class="num">£0.12</td><td class="num">£0.04</td><td class="num">£0.02</td><td class="num">£0.01</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td style="font-weight:700">Landed cost / bottle <span style="color:var(--text-muted);font-weight:400;font-size:0.82rem">(naïve, single-order)</span></td><td class="num">£8.10</td><td class="num">£3.69</td><td class="num">£2.39</td><td class="num">£2.00</td></tr>
+        <tr><td style="font-weight:500;font-size:0.85rem;color:var(--text-muted)">If mould amortised across 5 years (60k bottles)</td><td class="num">£3.67</td><td class="num">£2.82</td><td class="num">£2.22</td><td class="num">£1.92</td></tr>
+        <tr style="background:var(--accent-subtle)"><td style="font-weight:700;color:var(--accent-deep)">TOTAL ORDER COST (naïve)</td><td class="num" style="color:var(--accent-deep);font-weight:700">£8,100</td><td class="num" style="color:var(--accent-deep);font-weight:700">£18,450</td><td class="num" style="color:var(--accent-deep);font-weight:700">£59,750</td><td class="num" style="color:var(--accent-deep);font-weight:700">£100,000</td></tr>
+      </tfoot>
+    </table>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;margin:2rem 0 0.5rem;">Path B · Vetreria Etrusca — full custom mould</h3>
+    <p style="color:var(--text-muted);font-size:0.88rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1rem;">Fully bespoke silhouette · Italian tooling pricing · ~£13,500 tooling</p>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Component</th><th class="num">1,000 bottles</th><th class="num">5,000</th><th class="num">25,000</th><th class="num">50,000</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">Glass body (ex-works)</td><td class="num">£2.95</td><td class="num">£2.45</td><td class="num">£1.95</td><td class="num">£1.70</td></tr>
+        <tr><td class="sub">— bespoke 700ml flint, 650g, embossed sides + flat front panel</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Mould amortisation</td><td class="num">£13.50</td><td class="num">£2.70</td><td class="num">£0.54</td><td class="num">£0.27</td></tr>
+        <tr><td class="sub">— £13.5k full single-cavity, Italian pricing (~25% below Stoelzle)</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Wave base integral to mould</td><td class="num">£0.00</td><td class="num">£0.00</td><td class="num">£0.00</td><td class="num">£0.00</td></tr>
+        <tr><td class="sub">— no separate modification needed; designed-in</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Freight (door-to-door to NR16)</td><td class="num">£0.38</td><td class="num">£0.20</td><td class="num">£0.14</td><td class="num">£0.12</td></tr>
+        <tr><td class="component">Customs + broker</td><td class="num">£0.12</td><td class="num">£0.04</td><td class="num">£0.02</td><td class="num">£0.01</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td style="font-weight:700">Landed cost / bottle <span style="color:var(--text-muted);font-weight:400;font-size:0.82rem">(naïve, single-order)</span></td><td class="num">£16.95</td><td class="num">£5.39</td><td class="num">£2.65</td><td class="num">£2.10</td></tr>
+        <tr><td style="font-weight:500;font-size:0.85rem;color:var(--text-muted)">If mould amortised across 5 years (60k bottles)</td><td class="num">£3.70</td><td class="num">£2.92</td><td class="num">£2.34</td><td class="num">£2.05</td></tr>
+        <tr style="background:var(--accent-subtle)"><td style="font-weight:700;color:var(--accent-deep)">TOTAL ORDER COST (naïve)</td><td class="num" style="color:var(--accent-deep);font-weight:700">£16,950</td><td class="num" style="color:var(--accent-deep);font-weight:700">£26,950</td><td class="num" style="color:var(--accent-deep);font-weight:700">£66,250</td><td class="num" style="color:var(--accent-deep);font-weight:700">£105,000</td></tr>
+      </tfoot>
+    </table>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;margin:2rem 0 0.5rem;">Path C · Stoelzle Poland — full custom mould</h3>
+    <p style="color:var(--text-muted);font-size:0.88rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1rem;">Tier-1 Austrian/German tooling · ~£18,000 tooling</p>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Component</th><th class="num">1,000 bottles</th><th class="num">5,000</th><th class="num">25,000</th><th class="num">50,000</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">Glass body (ex-works)</td><td class="num">£3.10</td><td class="num">£2.55</td><td class="num">£2.05</td><td class="num">£1.75</td></tr>
+        <tr><td class="sub">— flint glass, 650g, tier-1 quality</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Mould amortisation</td><td class="num">£18.00</td><td class="num">£3.60</td><td class="num">£0.72</td><td class="num">£0.36</td></tr>
+        <tr><td class="sub">— £18k full single-cavity custom</td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Embossing premium</td><td class="num">£0.20</td><td class="num">£0.15</td><td class="num">£0.12</td><td class="num">£0.10</td></tr>
+        <tr><td class="component">Freight (door-to-door to NR16)</td><td class="num">£0.32</td><td class="num">£0.18</td><td class="num">£0.12</td><td class="num">£0.10</td></tr>
+        <tr><td class="component">Customs + broker</td><td class="num">£0.12</td><td class="num">£0.04</td><td class="num">£0.02</td><td class="num">£0.01</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td style="font-weight:700">Landed cost / bottle <span style="color:var(--text-muted);font-weight:400;font-size:0.82rem">(naïve, single-order)</span></td><td class="num">£21.74</td><td class="num">£6.52</td><td class="num">£3.03</td><td class="num">£2.32</td></tr>
+        <tr><td style="font-weight:500;font-size:0.85rem;color:var(--text-muted)">If mould amortised across 5 years (60k bottles)</td><td class="num">£3.97</td><td class="num">£3.22</td><td class="num">£2.61</td><td class="num">£2.21</td></tr>
+        <tr style="background:var(--accent-subtle)"><td style="font-weight:700;color:var(--accent-deep)">TOTAL ORDER COST (naïve)</td><td class="num" style="color:var(--accent-deep);font-weight:700">£21,740</td><td class="num" style="color:var(--accent-deep);font-weight:700">£32,600</td><td class="num" style="color:var(--accent-deep);font-weight:700">£75,750</td><td class="num" style="color:var(--accent-deep);font-weight:700">£116,000</td></tr>
+      </tfoot>
+    </table>
+
+    <div class="regulatory-flag">
+      <strong>Key finding.</strong> At 1,000 bottles the naïve per-order mould cost makes any custom path look expensive (£16.95–£21.74/bottle on Paths B and C). But mould is a capital asset — amortised over its realistic 5-year life and ~60,000 bottles, <strong>all three paths converge to within £0.30 of each other</strong> (£3.67 / £3.70 / £3.97). The real decision is about cash up-front (£4.5k vs. £13.5k vs. £18k) and whether a bespoke design drives enough retail velocity to justify the difference. <strong>Vetreria's full-custom path is the dark horse</strong> — you get a bespoke bottle owned outright, 25% cheaper tooling than Stoelzle, and steady-state unit economics that match the modified-mould path. See the break-even tab for the full maths.</div>
+  </div>
+
+  <div class="sub-panel" data-subpanel="cost:closures">
+    <div class="intro-prose">
+      <p>Default assumption in all cost tables is a <strong>T-cork (bar-top)</strong> closure, matching the ideal bottle's short-neck finish. Here's what the four closure options cost, and what changes at the neck if you switch.</p>
+    </div>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Closure type</th><th class="num">Unit cost @ 1,000</th><th class="num">Unit cost @ 10,000</th><th>Neck finish required</th><th>Perceived quality</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">T-cork (natural, painted wood top) <span class="good-tag">Default</span></td><td class="num">£0.65</td><td class="num">£0.48</td><td>GPI-400 or custom cork finish, 18.5–21.5mm bore</td><td>High — category expectation for premium rum</td></tr>
+        <tr><td class="component">T-cork (synthetic / agglomerated)</td><td class="num">£0.35</td><td class="num">£0.22</td><td>Same as above</td><td>Medium — save £0.26 but reads cheaper to a trained nose/eye</td></tr>
+        <tr><td class="component">Natural cork + foil shrink capsule</td><td class="num">£0.55</td><td class="num">£0.40</td><td>Wine-style crown finish</td><td>High — traditional cognac/armagnac cue; not typical for rum</td></tr>
+        <tr><td class="component">BVS screw cap (aluminium, 30×60)</td><td class="num">£0.15</td><td class="num">£0.09</td><td>BVS 30H-60 threaded finish</td><td>Low–medium — reads as mass-market unless heavy luxury variant (+£0.30)</td></tr>
+        <tr><td class="component">Synthetic bar stopper (polymer + wood top)</td><td class="num">£0.45</td><td class="num">£0.30</td><td>Same as T-cork</td><td>Medium–high — popular with craft gin, acceptable for rum</td></tr>
+        <tr><td class="component">Glass stopper with O-ring (Vinolok-style)</td><td class="num">£1.20</td><td class="num">£0.95</td><td>Custom ground finish</td><td>Very high — luxury decanter cue, but +£0.70 vs T-cork</td></tr>
+      </tbody>
+    </table>
+    <div class="notes"><span class="notes-label">Recommendation</span>Natural T-cork with a painted-wood top is the strongest signal for a premium rum brand at the £45 RRP tier. Glass stoppers are too expensive for the first order but worth considering for a limited-edition reserve SKU at £100+ RRP. Synthetic T-cork is a legitimate cost-down lever (saves £0.26/bottle) if the margin pressure becomes acute.</div>
+  </div>
+
+  <div class="sub-panel" data-subpanel="cost:colour">
+    <div class="intro-prose">
+      <p>Default is <strong>flint glass</strong> (standard clear) — the spirit must be visible per the brief. Alternatives listed are all still see-through; fully opaque colours (amber, cobalt, green-black) are excluded. Prices are per-bottle premium over flint at 1,000-bottle volumes.</p>
+    </div>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Glass variant</th><th class="num">Premium over flint</th><th>Visual character</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">Flint <span class="good-tag">Default</span></td><td class="num">—</td><td>Standard clear glass, very slight natural green/grey cast in thick sections</td><td>The universal default; what the ideal bottle reference uses</td></tr>
+        <tr><td class="component">Extra-flint (super-white)</td><td class="num">+£0.40 to £0.60</td><td>Crystal-clear, no cast, brighter and more luminous</td><td>Luxury cue; makes pale rum look whiter, amber rum look brighter. Premium positioning.</td></tr>
+        <tr><td class="component">Smoke / grey tint</td><td class="num">+£0.25 to £0.40</td><td>Subtle smoke cast; spirit still fully visible, reads moody</td><td>Interesting for a "dark rum" positioning but changes the warm clay label palette</td></tr>
+        <tr><td class="component">Sea-green / aqua tint</td><td class="num">+£0.25 to £0.40</td><td>Light marine cast — nautical cue without going amber</td><td>On-theme with rum's maritime heritage but commits the bottle to that reference</td></tr>
+        <tr><td class="component">Light bronze / honey tint</td><td class="num">+£0.30 to £0.45</td><td>Warm gold cast — amplifies the warmth of the liquid</td><td>Works with the FFEBCC brand palette; adds depth without obscuring the rum</td></tr>
+      </tbody>
+    </table>
+    <div class="notes"><span class="notes-label">Recommendation</span>Stay with flint for the launch. Extra-flint is the only meaningful upgrade and only justifies the premium if the liquid is exceptionally pale. Consider a tinted variant (bronze or sea-green) for a limited-edition Cask Strength or Navy Strength SKU down the line — ties back to the Odyssey maritime narrative.</div>
+  </div>
+
+  <div class="sub-panel" data-subpanel="cost:shipping">
+    <div class="intro-prose">
+      <p>Door-to-door landed freight from each supplier's factory to Roudham, Norfolk (NR16). Figures are desk estimates based on Upply / Ti / IRU Q4 2025 European Road Freight Rate Benchmark, docshipper.com 2026 rate cards, and published EU-UK groupage market rates. <span class="estimate-tag">Estimate</span> until live quotes in. Verified forwarders to request quotes from: <strong>Poland</strong> — DSV, DB Schenker, Rhenus, Palletways, Quicargo · <strong>Italy</strong> — DSV, GEODIS, Kuehne+Nagel, Dachser, Quicargo.</p>
+      <p>Assumptions: 600 bottles per Euro pallet (1.2m × 0.8m, shrink-wrapped, 6-bottle cartons, 7 layers high). 1,000 bottles = ~2 pallets. 5,000 = ~8-9 pallets. 25,000 = ~42 pallets (1.3 FTL). 50,000 = ~83 pallets (2–3 FTL — a 13.6m standard EU trailer carries 33 pallets).</p>
+    </div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;margin:2rem 0 0.5rem;">Freight costs by lane and volume</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Volume</th><th>Lane</th><th class="num">Total shipment £</th><th class="num">£ / bottle</th><th>Mode / carrier</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="3" style="font-weight:500;vertical-align:middle">1,000 bottles <br><span style="color:var(--text-muted);font-size:0.82rem">~2 pallets</span></td><td><strong>UK → NR16</strong> <span class="good-tag">Domestic</span></td><td class="num">£100 – £220</td><td class="num">£0.10 – £0.22</td><td>Palletways UK, Hermes B2B</td></tr>
+        <tr><td>Poland → NR16</td><td class="num">£320 – £500</td><td class="num">£0.32 – £0.50</td><td>Groupage (Palletways, Quicargo)</td></tr>
+        <tr><td>Italy → NR16</td><td class="num">£420 – £650</td><td class="num">£0.42 – £0.65</td><td>Groupage (Dachser, Quicargo)</td></tr>
+        <tr><td rowspan="3" style="font-weight:500;vertical-align:middle">5,000 bottles <br><span style="color:var(--text-muted);font-size:0.82rem">~8–9 pallets</span></td><td><strong>UK → NR16</strong> <span class="good-tag">Domestic</span></td><td class="num">£280 – £520</td><td class="num">£0.06 – £0.10</td><td>UK domestic pallet network</td></tr>
+        <tr><td>Poland → NR16</td><td class="num">£1,200 – £1,900</td><td class="num">£0.24 – £0.38</td><td>LTL (DSV, Schenker)</td></tr>
+        <tr><td>Italy → NR16</td><td class="num">£1,600 – £2,600</td><td class="num">£0.32 – £0.52</td><td>LTL (GEODIS, K+N)</td></tr>
+        <tr><td rowspan="3" style="font-weight:500;vertical-align:middle">25,000 bottles <br><span style="color:var(--text-muted);font-size:0.82rem">~42 pallets</span></td><td><strong>UK → NR16</strong> <span class="good-tag">Domestic</span></td><td class="num">£900 – £1,400</td><td class="num">£0.04 – £0.06</td><td>UK FTL (single trailer)</td></tr>
+        <tr><td>Poland → NR16</td><td class="num">£3,200 – £4,800</td><td class="num">£0.13 – £0.19</td><td>FTL (1.3× load)</td></tr>
+        <tr><td>Italy → NR16</td><td class="num">£4,200 – £6,200</td><td class="num">£0.17 – £0.25</td><td>FTL (1.3× load)</td></tr>
+        <tr><td rowspan="3" style="font-weight:500;vertical-align:middle">50,000 bottles <br><span style="color:var(--text-muted);font-size:0.82rem">~83 pallets</span></td><td><strong>UK → NR16</strong> <span class="good-tag">Domestic</span></td><td class="num">£1,700 – £2,600</td><td class="num">£0.03 – £0.05</td><td>UK 2–3 FTL</td></tr>
+        <tr><td>Poland → NR16</td><td class="num">£5,500 – £7,800</td><td class="num">£0.11 – £0.16</td><td>2–3 FTL</td></tr>
+        <tr><td>Italy → NR16</td><td class="num">£7,000 – £10,000</td><td class="num">£0.14 – £0.20</td><td>2–3 FTL</td></tr>
+      </tbody>
+    </table>
+
+    <div class="notes"><span class="notes-label">Key takeaway</span><strong>UK (Stoelzle Knottingley) dominates on freight economics.</strong> Domestic UK pallet-network rates from West Yorkshire to NR16 are roughly <strong>1/3 of Poland</strong> and <strong>1/4 of Italy</strong>. No Brexit paperwork, no customs clearance, no currency risk, next-day delivery possible. <strong>Poland is ~25% cheaper than Italy</strong> of the two EU options — mostly driven by shorter road distance and more competitive eastern European carrier capacity. At 1,000 bottles the absolute difference between UK and Italy is ~£200–430 — meaningful but not dominant. At 25,000+ bottles/year the UK freight advantage compounds to £2,800+ per order.</div>
+
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;margin:2rem 0 0.5rem;">Customs &amp; regulatory cost layer</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Item</th><th class="num">Cost / shipment</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">UK import duty</td><td class="num">£0.00</td><td>HS 7010904300. 0% tariff verified on UK Integrated Online Tariff April 2026. Empty glass bottles attract no duty.</td></tr>
+        <tr><td class="component">UK import VAT</td><td class="num">20% of customs value</td><td>Fully reclaimable via Postponed VAT Accounting. No cash outflow at the border once PVA is set up.</td></tr>
+        <tr><td class="component">Customs broker fee</td><td class="num">£60 – £150</td><td>Standard range for dry freight CDS declarations</td></tr>
+        <tr><td class="component">GMR + ENS declarations</td><td class="num">Included in freight</td><td>Goods Movement Reference + Entry Summary filed by carrier</td></tr>
+        <tr><td class="component">GB EORI number</td><td class="num">Free</td><td>Required before first shipment. ~3 days via gov.uk/eori</td></tr>
+        <tr><td class="component">Declaration of Compliance</td><td class="num">Free (request from supplier)</td><td>Retained Reg 1935/2004 + SI 2012/2619 food-contact declaration. Filed on company's own records, not submitted to an authority.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="regulatory-flag">
+      <strong>BTOM Category 1.</strong> Empty glass bottles are classified as Category 1 (low-risk dry goods) under the Border Target Operating Model. <strong>No phytosanitary certs, no veterinary certs, no IPAFFS notification</strong> required. Physical inspection rate is typically 2–5%. This is the easiest regulatory profile available — far simpler than importing filled spirits.
+    </div>
+  </div>
+
+  <div class="sub-panel" data-subpanel="cost:breakeven">
+    <div class="intro-prose">
+      <p>The single most important analytical question in this report: <strong>is the fully custom Stoelzle mould worth the additional £13,500 in tooling cost</strong> vs. modifying Vetreria Etrusca's existing Aurea Spirits 700ml? The answer depends on (a) how many bottles Odyssey actually sells and (b) how much incremental wholesale price a bespoke design commands.</p>
+      <h3>Break-even at current assumptions</h3>
+      <p>Your cost model assumes 1,000 bottles/month, i.e. 12,000 per year. A glass mould typically produces for 5–8 years. Taking 5 years as the conservative end, that's 60,000 bottles over the mould's working life.</p>
+      <ul>
+        <li><strong>Vetreria modified mould:</strong> £4,500 tooling ÷ 60,000 bottles = <strong>£0.075/bottle</strong></li>
+        <li><strong>Stoelzle custom mould:</strong> £18,000 tooling ÷ 60,000 bottles = <strong>£0.300/bottle</strong></li>
+        <li><strong>Bespoke-design premium:</strong> <strong>£0.23/bottle</strong> over 60k units = £13,500 total capital outlay</li>
+      </ul>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Per-bottle mould cost at varying annual volumes</div>
+      <div class="chart-sub">Mould life: 5 years · Tooling: £4.5k (modified) vs. £18k (custom)</div>
+      <div class="chart-canvas-wrap"><canvas id="breakevenChart"></canvas></div>
+    </div>
+
+    <div class="intro-prose">
+      <h3>At what volume does the bespoke premium become trivial?</h3>
+      <p>The custom mould's amortised cost falls below £0.10/bottle (effectively invisible in a £28 wholesale) at 180,000 bottles of production. That's 30,000 bottles/year over 6 years, or 15,000/year over 12 years.</p>
+      <p><strong>What breaks the decision:</strong> if a bespoke bottle commands even £0.50 more wholesale (£45.50 RRP instead of £45.00), the £13,500 bespoke premium is recovered in 27,000 bottles — inside the mould's first lifetime. If bespoke drives £1 more wholesale, payback is 13,500 bottles. If it drives no price lift at all, the modified path is obviously cheaper.</p>
+    </div>
+
+    <div class="verdict-box">
+      <div class="verdict-label">The decision framework</div>
+      <h4>Start with Vetreria modified, plan for Stoelzle at Year 3</h4>
+      <p>Launching with a modified Aurea Spirits 700ml protects £13,500 of capital during the riskiest phase of the business (launch + first 18 months of proving demand). If Odyssey scales to 30,000+ bottles/year, commission a fully bespoke Stoelzle mould for a relaunch SKU at Year 3 — by then the brand has the cash flow and the data on which design elements matter most to the retail buyer.</p>
+      <p>If the Aurea modification doesn't deliver enough bespoke feel to support the £45 RRP positioning, the fall-back is Saverglass's SUPREME decanter — no mould cost at all — at a £0.80–£1.20/bottle unit price premium. Either way, <strong>Stoelzle's Standard Collection NELSON or ICE with acid-etch frosting</strong> remains a third viable route at low volume if decorative substitution can stand in for structural embossing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOTTLE MOCK-UPS TAB ============ -->
+<section class="tab-panel" data-panel="mockups">
+  <div class="panel-head">
+    <div>
+      <div class="eyebrow">Design exploration</div>
+      <h2>Bottle mock-ups</h2>
+      <p class="lede">Six candidate silhouettes against the Art Deco brief, with live toggles for label artwork, label shape, label material, closure type, and embossing depth. Price impact shown in real time.</p>
+    </div>
+    <button class="btn-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+
+  <div class="mockup-studio">
+    <!-- LEFT: Bottle viewer -->
+    <div class="mockup-viewer">
+      <div class="bottle-svg-wrap" id="bottleSvgWrap">
+        <!-- SVG bottles are injected by JS -->
+      </div>
+      <button class="label-swap-btn" id="labelSwapBtn" title="Flip between Archers and Quarry label">
+        <span class="swap-icon">⇄</span>
+        <span class="swap-text">Swap label</span>
+      </button>
+    </div>
+
+    <!-- RIGHT: Controls -->
+    <div class="mockup-controls">
+      <div class="live-price">
+        <div class="price-label">Estimated landed cost / bottle @ 1,000 units</div>
+        <div class="price-figure" id="livePrice">£8.10</div>
+        <div class="price-sub" id="livePriceSub">Vetreria Etrusca · modified Aurea Spirits · flint · paper label · T-cork</div>
+        <div class="price-stack" id="livePriceStack">
+          <span>Glass body + emboss</span><span>£3.10</span>
+          <span>Mould amortisation</span><span>£4.50</span>
+          <span>Base modification</span><span>£0.30</span>
+          <span>Freight + customs</span><span>£0.50</span>
+          <span>Closure (T-cork)</span><span>£0.65</span>
+          <span>Labels (paper)</span><span>£0.80</span>
+          <span>Cartons + seal</span><span>£0.25</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h4>Silhouette</h4>
+        <div class="control-sub">Tap to compare · six variants</div>
+        <div class="variant-grid" id="silhouetteGrid">
+          <!-- injected by JS -->
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h4>Label artwork</h4>
+        <div class="control-sub">Two candidate artworks from the brief</div>
+        <div class="control-row">
+          <button class="control-chip active" data-label="left">Archers<span class="price-delta">same cost</span></button>
+          <button class="control-chip" data-label="right">Quarry<span class="price-delta">same cost</span></button>
+          <button class="control-chip" data-label="none">No label<span class="price-delta">—</span></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h4>Label shape</h4>
+        <div class="control-sub">Die-cut affects cost · default rectangular</div>
+        <div class="control-row">
+          <button class="control-chip active" data-shape="rect">Rectangular<span class="price-delta">baseline</span></button>
+          <button class="control-chip" data-shape="arch">Arched top<span class="price-delta">+£0.04</span></button>
+          <button class="control-chip" data-shape="diecut">Die-cut<span class="price-delta">+£0.12</span></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h4>Label material</h4>
+        <div class="control-sub">Paper is cheaper; cotton feels premium</div>
+        <div class="control-row">
+          <button class="control-chip active" data-material="paper">Paper<span class="price-delta">baseline</span></button>
+          <button class="control-chip" data-material="cotton">Textured cotton<span class="price-delta">+£0.08</span></button>
+          <button class="control-chip" data-material="foil">Foil-stamped<span class="price-delta">+£0.18</span></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h4>Closure</h4>
+        <div class="control-sub">Cork default — swap to see margin impact</div>
+        <div class="control-row">
+          <button class="control-chip active" data-closure="tcork">T-cork<span class="price-delta">£0.65</span></button>
+          <button class="control-chip" data-closure="synth">Synth bar<span class="price-delta">£0.45</span></button>
+          <button class="control-chip" data-closure="screw">Screw cap<span class="price-delta">£0.15</span></button>
+          <button class="control-chip" data-closure="glass">Glass stopper<span class="price-delta">£1.20</span></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <h4>Supplier path</h4>
+        <div class="control-sub">Determines mould cost &amp; freight / customs</div>
+        <div class="control-row" style="display:grid;grid-template-columns:1fr 1fr;gap:0.45rem">
+          <button class="control-chip active" data-path="vetreria">Vetreria mod<span class="price-delta">Italy · £4.5k tooling</span></button>
+          <button class="control-chip" data-path="vetreriaCustom">Vetreria custom<span class="price-delta">Italy · £13.5k tooling</span></button>
+          <button class="control-chip" data-path="stoelzle">Stoelzle custom<span class="price-delta">Poland · £18k tooling</span></button>
+          <button class="control-chip" data-path="stoelzleUK">Stoelzle UK<span class="price-delta">UK stock · £0 tooling</span></button>
+          <button class="control-chip" data-path="saverstock">Saverglass stock<span class="price-delta">France · £0 tooling</span></button>
+          <button class="control-chip" data-path="verallia">Verallia UK<span class="price-delta">UK stock · £0 tooling</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGISTICS TAB ============ -->
+<section class="tab-panel" data-panel="logistics">
+  <div class="panel-head">
+    <div>
+      <div class="eyebrow">Freight · customs · MOQ</div>
+      <h2>Logistics, regulations &amp; minimum orders</h2>
+      <p class="lede">Full analysis of shipping costs Poland→NR16 and Italy→NR16, UK import regulations for empty glass, minimum order quantities at both suppliers, and the commercial wins at higher tiers.</p>
+    </div>
+    <button class="btn-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+  <div id="logistics-content">
+    <div class="sub-nav">
+      <button class="sub-btn active" data-sub="logistics:freight">Freight &amp; transit</button>
+      <button class="sub-btn" data-sub="logistics:customs">UK import regulations</button>
+      <button class="sub-btn" data-sub="logistics:moq">MOQs &amp; volume discounts</button>
+      <button class="sub-btn" data-sub="logistics:checklist">Setup checklist</button>
+    </div>
+
+    <div class="sub-panel active" data-subpanel="logistics:freight">
+      <div class="regs-prose">
+        <h3>Transit times and carriers</h3>
+        <p>Both lanes are well-established, high-frequency routes. Neither presents operational risk beyond routine Brexit paperwork. Transit expectations for empty glass (dry goods, no temperature control, no dangerous goods handling):</p>
+        <table class="regs-table">
+          <thead>
+            <tr><th>Lane</th><th>Transit (door-to-door)</th><th>Frequency</th><th>Primary carriers</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Częstochowa → NR16</td><td><strong>3–5 working days</strong></td><td>Multiple groupage departures weekly</td><td>DSV, DB Schenker, Rhenus, Palletways, Quicargo, EA Logistic</td></tr>
+            <tr><td>Tuscany → NR16</td><td><strong>4–7 working days</strong></td><td>Daily groupage via Dover / Calais and Dover / Dunkerque</td><td>DSV, GEODIS, Kuehne+Nagel, Dachser, Quicargo</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Choosing Incoterms</h4>
+        <p>For the first order, <strong>FCA (Free Carrier)</strong> is the recommended Incoterm from both suppliers. This gives Pantheon control of the freight (meaning you choose the carrier, negotiate the rate, and retain visibility) while the supplier handles EU export clearance at their factory. Alternative options:</p>
+        <ul>
+          <li><strong>EXW (Ex-Works)</strong> — cheapest on paper but Pantheon becomes responsible for EU export paperwork, which most UK importers are not set up to handle.</li>
+          <li><strong>DAP (Delivered at Place)</strong> — supplier handles freight to NR16. Simpler but typically 10–20% more expensive because the supplier's forwarder margin is baked in. Worth considering for the first order to de-risk.</li>
+          <li><strong>DDP (Delivered Duty Paid)</strong> — fully door-to-door including UK import. Not recommended — you lose visibility on VAT recovery and the supplier's UK customs agent fee is usually a poor deal.</li>
+        </ul>
+
+        <h4>Pallet efficiency, load planning &amp; total freight cost by region</h4>
+        <p>700ml flint spirits bottles in standard 6-bottle cartons pack to roughly <strong>528–630 bottles per Euro pallet</strong> (1.2m × 0.8m, 7 layers high, shrink-wrapped). Use 600 as a planning figure.</p>
+        <table class="regs-table">
+          <thead>
+            <tr>
+              <th rowspan="2" style="vertical-align:bottom">Order size</th>
+              <th rowspan="2" style="vertical-align:bottom">Pallets</th>
+              <th colspan="2" style="text-align:center;border-right:1px solid var(--border)">UK (Knottingley)</th>
+              <th colspan="2" style="text-align:center;border-right:1px solid var(--border)">Poland (Częstochowa)</th>
+              <th colspan="2" style="text-align:center">Italy (Montelupo)</th>
+            </tr>
+            <tr>
+              <th style="font-size:10px">Total £</th><th style="font-size:10px;border-right:1px solid var(--border)">£ / bottle</th>
+              <th style="font-size:10px">Total £</th><th style="font-size:10px;border-right:1px solid var(--border)">£ / bottle</th>
+              <th style="font-size:10px">Total £</th><th style="font-size:10px">£ / bottle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1,000</strong></td><td>~2</td>
+              <td>£100 – £220</td><td style="border-right:1px solid var(--border)">£0.10 – £0.22</td>
+              <td>£320 – £500</td><td style="border-right:1px solid var(--border)">£0.32 – £0.50</td>
+              <td>£420 – £650</td><td>£0.42 – £0.65</td>
+            </tr>
+            <tr>
+              <td><strong>5,000</strong></td><td>~8–9</td>
+              <td>£280 – £520</td><td style="border-right:1px solid var(--border)">£0.06 – £0.10</td>
+              <td>£1,200 – £1,900</td><td style="border-right:1px solid var(--border)">£0.24 – £0.38</td>
+              <td>£1,600 – £2,600</td><td>£0.32 – £0.52</td>
+            </tr>
+            <tr>
+              <td><strong>25,000</strong></td><td>~42</td>
+              <td>£900 – £1,400</td><td style="border-right:1px solid var(--border)">£0.04 – £0.06</td>
+              <td>£3,200 – £4,800</td><td style="border-right:1px solid var(--border)">£0.13 – £0.19</td>
+              <td>£4,200 – £6,200</td><td>£0.17 – £0.25</td>
+            </tr>
+            <tr>
+              <td><strong>50,000</strong></td><td>~83</td>
+              <td>£1,700 – £2,600</td><td style="border-right:1px solid var(--border)">£0.03 – £0.05</td>
+              <td>£5,500 – £7,800</td><td style="border-right:1px solid var(--border)">£0.11 – £0.16</td>
+              <td>£7,000 – £10,000</td><td>£0.14 – £0.20</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.88rem;color:var(--text-muted);font-style:italic">All figures are mid-market desk estimates (Upply / Ti / IRU Q4 2025 benchmark + docshipper.com 2026 rate cards for EU lanes; Palletways / Hermes B2B pricing for UK domestic) — confirm with live forwarder quotes before committing. UK totals exclude customs (not applicable).</p>
+
+        <h4>Strategic option: Stoelzle UK (Knottingley)</h4>
+        <p>Stoelzle operates a UK plant at Knottingley, West Yorkshire (trading as Stoelzle Flaconnage), which is the group's "centre of excellence" for prestige spirits design. <strong>Ask whether any of their Standard Collection can be sourced from UK stock</strong> — this would collapse the Poland-versus-Italy logistics question entirely: domestic UK freight to Norfolk would be under £150 per pallet, with no customs, no EORI, no currency risk, and next-day availability in many cases.</p>
+      </div>
+    </div>
+
+    <div class="sub-panel" data-subpanel="logistics:customs">
+      <div class="regs-prose">
+        <h3>UK import regulatory framework</h3>
+        <p>Empty glass bottles are among the lightest regulatory imports into the UK. The entire regulatory stack that applies to Odyssey's glass procurement is summarised below — there are no hidden surprises, but a few items Pantheon must have in place before the first order.</p>
+
+        <h4>Tariff classification and duties</h4>
+        <ul>
+          <li><strong>HS code:</strong> <code>7010904300</code> — "Colourless glass bottles, beverages, 0.33L–1L capacity"</li>
+          <li><strong>UK Import Duty rate:</strong> <strong>0.00%</strong> under the UK Global Tariff (confirmed on UK Integrated Online Tariff, April 2026)</li>
+          <li><strong>Trade agreement:</strong> UK-EU Trade &amp; Cooperation Agreement applies. Origin rules are relevant but irrelevant in practice here because the duty rate is zero regardless of origin.</li>
+          <li><strong>Import VAT:</strong> 20% of customs value. <strong>Set up Postponed VAT Accounting (PVA)</strong> before the first shipment — this means no VAT is paid at the border (it's instead declared and reclaimed on the quarterly VAT return, so cash-flow neutral). Free to set up via HMRC.</li>
+        </ul>
+
+        <h4>Food Contact Materials compliance</h4>
+        <p>Glass is the lowest-risk food contact material in the UK regulatory framework (glass migration is essentially zero). The compliance obligation is:</p>
+        <ul>
+          <li><strong>Obtain a Declaration of Compliance (DoC)</strong> from each supplier confirming the bottles meet UK-retained <strong>Regulation (EC) No 1935/2004</strong> on materials intended to come into contact with food, as implemented by <strong>The Materials and Articles in Contact with Food (England) Regulations 2012 (SI 2012/2619)</strong>.</li>
+          <li>The DoC is <strong>not</strong> submitted to any government authority. Keep it on company records for the life of the product, available if Trading Standards request it.</li>
+          <li>All tier-1 European glassworks issue this document routinely. Both Stoelzle and Vetreria Etrusca will produce one on request.</li>
+        </ul>
+
+        <h4>UKCA and CE marking</h4>
+        <p><strong>Not required for empty glass bottles.</strong> Glass food-contact packaging is outside both the UKCA product safety regime and CE marking requirements. Save the compliance budget for the label (which does have product-information regulatory requirements when filled — see below).</p>
+
+        <h4>When the bottles are filled — flagged for later</h4>
+        <p>This report is about empty glass, but for reference when Odyssey is filled, bottled, and sold:</p>
+        <ul>
+          <li>UK Excise Duty: £33.99/LPA from 1 Feb 2026 → ~£10.00 per 700ml bottle at 42% ABV</li>
+          <li>AWRS (Alcohol Wholesaler Registration Scheme) required for wholesale movement</li>
+          <li>Label must carry UK FBO address, allergen info, alcohol strength, net volume, duty-paid text</li>
+          <li>Recycling mark (e.g. "Glass — Widely Recycled") optional but standard practice</li>
+        </ul>
+        <p>None of these apply to the empty-glass import itself.</p>
+
+        <h4>Border Target Operating Model (BTOM)</h4>
+        <p>Empty glass is classified as <strong>BTOM Category 1 — Low Risk Dry Goods</strong>. Operational implications:</p>
+        <ul>
+          <li>No phytosanitary certificate</li>
+          <li>No veterinary certificate</li>
+          <li>No IPAFFS pre-notification</li>
+          <li>No Border Control Post inspection routing</li>
+          <li>Typical physical inspection rate: 2–5% (random, at destination in many cases)</li>
+          <li>Required: Entry Summary Declaration (ENS) filed by carrier 2 hours before arrival · Goods Movement Reference (GMR) for RoRo · Commercial invoice + packing list + CMR consignment note</li>
+        </ul>
+
+        <h4>Documents needed before first shipment</h4>
+        <div class="checklist">
+          <ul>
+            <li>GB EORI number (gov.uk/eori · free · ~3 days)</li>
+            <li>Registered UK VAT number + PVA set up in HMRC account</li>
+            <li>UK customs broker appointed (optional but recommended for first 2–3 shipments — budget £60–150/shipment)</li>
+            <li>Supplier DoC (Declaration of Compliance) on file for each SKU</li>
+            <li>Supplier's EORI (EU) — they should already have this if they export regularly</li>
+            <li>Packing list matching commercial invoice exactly</li>
+            <li>CMR consignment note (prepared by carrier)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-panel" data-subpanel="logistics:moq">
+      <div class="regs-prose">
+        <h3>Minimum order quantities and volume discounts</h3>
+        <p>This is where the two primary suppliers diverge most sharply. Stoelzle's scale makes them expensive at launch volumes and excellent at scale; Vetreria Etrusca is the mirror — accessible at 1,000 but less competitive at 50,000+.</p>
+
+        <h4>Stoelzle (Poland) MOQ matrix <span class="estimate-tag">Estimate</span></h4>
+        <table class="regs-table">
+          <thead>
+            <tr><th>Production path</th><th>Typical MOQ</th><th>Odyssey fit at 1,000 units</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Standard Collection (existing mould, undecorated)</td><td>2,000–5,000 bottles</td><td>Below MOQ. Would need to commit to 2,000+ or pool with a future run.</td></tr>
+            <tr><td>Standard Collection + embossing / acid-frost / screen print</td><td>5,000–10,000 bottles</td><td>Below MOQ by a factor of 5. Not viable for first order.</td></tr>
+            <tr><td>Modified existing mould (e.g. tweak base or neck)</td><td>5,000–15,000 bottles</td><td>Significantly below MOQ.</td></tr>
+            <tr><td>Full custom new mould, single-cavity</td><td>10,000–30,000 bottles</td><td>Far below MOQ.</td></tr>
+          </tbody>
+        </table>
+        <p>Operational reality: Stoelzle will not run a 1,000-bottle bespoke order. The only viable first-order path through Stoelzle is <strong>Standard Collection with a Year-2 volume commitment</strong> (Pantheon signs a 20,000-bottle-over-24-months contract with the first 1,000 as a launch tranche). Worth proposing explicitly — Stoelzle's Diageo relationship and UK Packaging Award 2025 show they're actively chasing premium launches.</p>
+
+        <h4>Vetreria Etrusca MOQ matrix <span class="estimate-tag">Estimate — confirm on enquiry</span></h4>
+        <table class="regs-table">
+          <thead>
+            <tr><th>Production path</th><th>Typical MOQ</th><th>Odyssey fit at 1,000 units</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Catalogue bottle (including Monet Deco), ex-stock</td><td>Likely <strong>1,500–3,000 bottles</strong> (confirm)</td><td>Close. 1,000 bottles may be accepted with a small premium, or pooled into a 1,500 buy.</td></tr>
+            <tr><td>Catalogue bottle with minor mould modification</td><td>~3,000–5,000 bottles</td><td>Requires first-order commitment of 3,000+ (or split into 2 production runs)</td></tr>
+            <tr><td>Full custom mould</td><td>10,000+ bottles</td><td>Not viable for launch.</td></tr>
+          </tbody>
+        </table>
+        <p>Mid-sized Italian glassworks like Vetreria Etrusca are typically 30–50% more flexible on MOQ than the tier-1 group players — a reputation confirmed by their service to small Italian amaro and liqueur producers that wouldn't be viable at O-I or Verallia's Italian plants.</p>
+
+        <h4>Volume-based unit price discounts <span class="estimate-tag">Estimate</span></h4>
+        <p>Both suppliers follow similar tier-based discount curves for spirits bottles. Indicative % reductions on unit price (assumes the same SKU across volumes):</p>
+        <table class="regs-table">
+          <thead>
+            <tr><th>Annual volume tier</th><th>Typical unit price reduction vs. 1,000-unit price</th><th>What's driving the discount</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>5,000</td><td>12–18%</td><td>Better furnace pack-out; one campaign run instead of fractional</td></tr>
+            <tr><td>10,000</td><td>20–28%</td><td>Dedicated production window; decoration line optimised</td></tr>
+            <tr><td>25,000</td><td>30–40%</td><td>Raw material procurement scale; carrier negotiation leverage</td></tr>
+            <tr><td>50,000</td><td>40–50%</td><td>Multi-cavity mould viable (2x throughput); preferred-customer status</td></tr>
+            <tr><td>100,000+</td><td>50–60%</td><td>Long-term supply agreement, typically with committed forecasts</td></tr>
+          </tbody>
+        </table>
+
+        <h4>Commercial wins at each tier</h4>
+        <p>Beyond the unit price, bigger volume unlocks softer commercial benefits that matter to cash flow and launch logistics:</p>
+        <ul>
+          <li><strong>5,000 bottles:</strong> Extended payment terms (30 days net from invoice instead of proforma). One-off waiver of a small mould-modification fee.</li>
+          <li><strong>10,000+ bottles:</strong> Guaranteed production slot windows (useful for launch planning). Free or subsidised first-order sample run (100-200 bottles). Priority queuing for re-orders.</li>
+          <li><strong>25,000+ bottles:</strong> Multi-cavity mould possible (halves per-unit production cost on subsequent runs). Dedicated account manager. Annual price lock for stability.</li>
+          <li><strong>50,000+ bottles:</strong> Mould capitalised by supplier (they absorb tooling cost and build it into unit price over the contract). Warehouse-and-call-off arrangement (supplier holds stock, Pantheon pays on draw-down — big cash flow benefit). Ability to co-develop new bottles without upfront tooling spend.</li>
+        </ul>
+
+        <div class="verdict-box">
+          <div class="verdict-label">Negotiation lever</div>
+          <h4>Frame the first order as a launch tranche</h4>
+          <p>Neither supplier will offer their best rates for 1,000 bottles in isolation. The right play is to open with: "Our launch tranche is 1,000 bottles in [month], followed by a projected 10,000 in the first 12 months and 25,000 in the second year. We're evaluating you against [other supplier] on total relationship value, not single-order price." Both will improve their offer materially if they believe the volume is coming.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-panel" data-subpanel="logistics:checklist">
+      <div class="regs-prose">
+        <h3>Pre-launch import readiness checklist</h3>
+        <p>Everything Pantheon needs in place before the first shipment of glass arrives at NR16. Most items are free and administrative. Budget 4–6 weeks lead time to get all of this in place alongside the supplier qualification process.</p>
+        <div class="checklist">
+          <ul>
+            <li>Obtain GB EORI number from HMRC (gov.uk/eori — free, ~3 working days)</li>
+            <li>Register for UK VAT (if not already) — required for PVA</li>
+            <li>Activate Postponed VAT Accounting in HMRC online account (2 minutes)</li>
+            <li>Choose and brief a UK customs broker for the first 2–3 shipments</li>
+            <li>Appoint a UK freight forwarder for both Poland and Italy lanes</li>
+            <li>Request Declaration of Compliance (Reg 1935/2004) from supplier, signed and on letterhead</li>
+            <li>Confirm supplier's EU EORI and VAT export status</li>
+            <li>Agree Incoterms in writing on the commercial agreement (recommend FCA)</li>
+            <li>Confirm pallet specification with supplier (Euro pallet, heat-treated where applicable)</li>
+            <li>Confirm carton specification with supplier (6-bottle, separator inserts, double-wall corrugated)</li>
+            <li>Receive sample bottles (20–50) for co-packer trial fill and closure fit test — BEFORE placing first production order</li>
+            <li>Co-packer confirms compatibility with their bottling line (neck finish tolerance, carton orientation for infeed)</li>
+            <li>Product liability insurance includes container failure scenarios (standard PLI does)</li>
+            <li>Record-keeping system in place for 5-year DoC and batch traceability</li>
+          </ul>
+        </div>
+
+        <h4>Ongoing cost efficiency moves</h4>
+        <ul>
+          <li><strong>Consolidate orders.</strong> A single 5,000-bottle order is 35–40% cheaper on freight than five 1,000-bottle orders. Even if warehousing costs Pantheon £500/year to hold inventory, the freight savings dwarf that from order 2 onwards.</li>
+          <li><strong>Consider a Duty Deferment Account (DDA)</strong> once doing 6+ declarations per year — worth the overhead from that point. Not before.</li>
+          <li><strong>Explore pooled freight</strong> with other UK craft spirits brands — Pantheon's Norfolk co-packer likely receives glass from 3–5 different brands; consolidating inbound shipments across those brands could halve per-pallet freight cost.</li>
+          <li><strong>Warehouse-at-source</strong> at Stoelzle or Vetreria (supplier holds your stock for a small storage fee) — once annual volume exceeds ~15,000 bottles, this can let Pantheon draw down monthly without the cash-flow shock of 100% upfront purchase.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALTERNATIVES TAB ============ -->
+<section class="tab-panel" data-panel="alternatives">
+  <div class="panel-head">
+    <div>
+      <div class="eyebrow">Gate-check</div>
+      <h2>Other potential glass providers</h2>
+      <p class="lede">We stress-tested eight other European glass manufacturers against the brief. Two merit inclusion. The rest are explicitly eliminated below.</p>
+    </div>
+    <button class="btn-pdf" onclick="exportPDF()">Export PDF</button>
+  </div>
+
+  <div class="intro-prose">
+    <p><strong>Verdict: two alternatives worth evaluating.</strong> Both offer genuine differentiation from Stoelzle and Vetreria Etrusca — they're not padding. The remaining candidates are disqualified for the reasons listed at the end of this tab.</p>
+  </div>
+
+  <div class="supplier-card rank-1">
+    <div class="card-header">
+      <div class="card-heading">
+        <span class="rank-tag">Alternative 01 · France</span>
+        <h3>Saverglass</h3>
+        <div class="card-meta">Feuquières, Oise, Hauts-de-France · tier-1 luxury glass specialist · Orora-owned</div>
+      </div>
+      <div class="rating">
+        <span class="rating-label">Fit score</span>
+        <span class="rating-value">4.2 / 5</span>
+        <span class="rating-stars">★★★★☆</span>
+      </div>
+    </div>
+    <div class="data-grid">
+      <div class="data-row">
+        <div class="data-label">Why it beats Stoelzle/Vetreria</div>
+        <div class="data-value">Deepest Art Deco stock library in Europe — the SUPREME decanter (ref. 5315, 70/75cl, flint, polished plate finish, solid glass pedestal) and ZENITH series are authentically Art Deco geometric premium decanters available from stock. No custom mould required.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Stock availability</div>
+        <div class="data-value">Catalogue lines are "available from stock in most cases." A 1,000-bottle order against a stock mould is operationally feasible — unlike a new custom mould at Stoelzle, which is non-viable below 10k units.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">UK coverage</div>
+        <div class="data-value">Named "England &amp; Wales Sales Manager" based in the UK (confirmed via LeadIQ, November 2025). Direct coverage — no third-party distributor.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Direct contact</div>
+        <div class="data-value">HQ +33 3 44 46 45 45 · <a href="https://www.saverglass.com/en/contact-us/contact-form">Contact form</a> · EMEA Sales Director Audrey Dardonville (appointed 2025)</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Key portfolio URLs</div>
+        <div class="data-value"><a href="https://www.saverglass.com/en/our-products/catalog-spirits">Spirits catalogue</a> · <a href="https://www.saverglass.com/en/our-products/catalog-spirits/supreme-75-cl-plate">SUPREME decanter</a></div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Reference customers</div>
+        <div class="data-value">Empress 1908 Gin (Victoria Distillers), Ardnamurchan Distillery, premium Cognac and Whisky marques globally. Positioning line: "emerging brands committed to quality and exclusivity."</div>
+      </div>
+    </div>
+    <div class="notes"><span class="notes-label">Risk / caveat</span>Now owned by Australian packaging group Orora since 2023. Le Havre plant restructuring confirmed late 2025 (112 jobs cut). Confirm SUPREME/ZENITH 70cl stock availability explicitly before committing.</div>
+
+    <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin:1.5rem 0 0.75rem;color:var(--text);">Topline landed cost <span class="estimate-tag">Estimate</span></h4>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Component</th><th class="num">1,000 bottles</th><th class="num">5,000</th><th class="num">25,000</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">Glass body (SUPREME stock, ex-works)</td><td class="num">£3.60</td><td class="num">£2.95</td><td class="num">£2.35</td></tr>
+        <tr><td class="component">Mould amortisation</td><td class="num">£0.00</td><td class="num">£0.00</td><td class="num">£0.00</td></tr>
+        <tr><td class="sub">— stock bottle, zero tooling</td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Freight France → NR16</td><td class="num">£0.40</td><td class="num">£0.22</td><td class="num">£0.16</td></tr>
+        <tr><td class="component">Customs + broker</td><td class="num">£0.12</td><td class="num">£0.04</td><td class="num">£0.02</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td style="font-weight:700">Landed cost / bottle</td><td class="num">£4.12</td><td class="num">£3.21</td><td class="num">£2.53</td></tr>
+        <tr style="background:var(--accent-subtle)"><td style="font-weight:700;color:var(--accent-deep)">TOTAL ORDER COST</td><td class="num" style="color:var(--accent-deep);font-weight:700">£4,120</td><td class="num" style="color:var(--accent-deep);font-weight:700">£16,050</td><td class="num" style="color:var(--accent-deep);font-weight:700">£63,250</td></tr>
+      </tfoot>
+    </table>
+    <div class="notes" style="margin-top:0.8rem"><strong>Why this is attractive:</strong> £4.12 per bottle at 1,000 units is the lowest landed cost of any option in this report — zero tooling means you save £13,500+ of capital vs. a custom Vetreria or Stoelzle mould. Steady-state (5k+) it's competitive with Vetreria modified. Trade-off: you do not own the silhouette; another brand could use the same SUPREME bottle and dress it differently.</div>
+  </div>
+
+  <div class="supplier-card rank-1">
+    <div class="card-header">
+      <div class="card-heading">
+        <span class="rank-tag">Alternative 02 · UK</span>
+        <h3>Verallia UK (Leeds)</h3>
+        <div class="card-meta">Formerly Allied Glass Containers · part of Verallia Group (France) · UK-manufactured</div>
+      </div>
+      <div class="rating">
+        <span class="rating-label">Fit score</span>
+        <span class="rating-value">4.0 / 5</span>
+        <span class="rating-stars">★★★★☆</span>
+      </div>
+    </div>
+    <div class="data-grid">
+      <div class="data-row">
+        <div class="data-label">Why it beats both primaries</div>
+        <div class="data-value">UK-domiciled. No customs, no EORI paperwork, no post-Brexit import friction, no currency risk on freight invoices, short domestic lead times to Norfolk NR16. This is a structural advantage neither Stoelzle nor Vetreria Etrusca can match.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Art Deco credentials</div>
+        <div class="data-value">Verallia UK's Selective Line is explicitly described in their own marketing as including an "Art Deco-inspired bottle" (used by Holly's Gin for a limited-edition RTD). The Newton Tall design is used by Ardnamurchan Distillery.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Startup positioning</div>
+        <div class="data-value">Their own catalogue line: "ideal for those not able to meet the minimum order requirements of proprietary bottles." Explicit track record with UK craft spirits startups.</div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Direct contact</div>
+        <div class="data-value">Verallia UK Limited · 69 South Accommodation Road, Leeds LS10 1NQ · <strong>+44 (0)113 245 1568</strong> · <a href="https://uk.verallia.com/contact/">Contact form</a></div>
+      </div>
+      <div class="data-row">
+        <div class="data-label">Reference customers</div>
+        <div class="data-value">Ardnamurchan Distillery (Scottish single malt), 58andCo (London craft spirits), Holly's Gin, Trevethan Distillery (Cornish Gin).</div>
+      </div>
+    </div>
+    <div class="notes"><span class="notes-label">Risk / caveat</span>The Selective Line is a curated premium range, not an ultra-luxury custom capability. If Odyssey's Art Deco brief demands a bespoke silhouette their Selective catalogue can't match, Verallia UK can't help — they won't run custom moulds below ~10,000 units.</div>
+
+    <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin:1.5rem 0 0.75rem;color:var(--text);">Topline landed cost <span class="estimate-tag">Estimate</span></h4>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Component</th><th class="num">1,000 bottles</th><th class="num">5,000</th><th class="num">25,000</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="component">Glass body (Selective Line stock, ex-works Leeds)</td><td class="num">£3.20</td><td class="num">£2.65</td><td class="num">£2.15</td></tr>
+        <tr><td class="component">Mould amortisation</td><td class="num">£0.00</td><td class="num">£0.00</td><td class="num">£0.00</td></tr>
+        <tr><td class="sub">— stock bottle, zero tooling</td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">UK domestic freight Leeds → NR16</td><td class="num">£0.12</td><td class="num">£0.06</td><td class="num">£0.04</td></tr>
+        <tr><td class="sub">— single pallet: ~£120 one-off; full load: ~£300–£400</td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+        <tr><td class="component">Customs + broker</td><td class="num">£0.00</td><td class="num">£0.00</td><td class="num">£0.00</td></tr>
+        <tr><td class="sub">— no customs, no EORI, no Brexit paperwork</td><td class="num"></td><td class="num"></td><td class="num"></td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td style="font-weight:700">Landed cost / bottle</td><td class="num">£3.32</td><td class="num">£2.71</td><td class="num">£2.19</td></tr>
+        <tr style="background:var(--accent-subtle)"><td style="font-weight:700;color:var(--accent-deep)">TOTAL ORDER COST</td><td class="num" style="color:var(--accent-deep);font-weight:700">£3,320</td><td class="num" style="color:var(--accent-deep);font-weight:700">£13,550</td><td class="num" style="color:var(--accent-deep);font-weight:700">£54,750</td></tr>
+      </tfoot>
+    </table>
+    <div class="notes" style="margin-top:0.8rem"><strong>Why this is attractive:</strong> The cheapest total landed cost in this report — <strong>£3.32/bottle at 1,000 units</strong>, dramatically under the £6 target. The absence of Brexit paperwork, freight across the Channel, and currency risk is genuinely meaningful for startup cash flow. Trade-off: like Saverglass, you don't own the silhouette — and you're tied to Verallia's Selective Line aesthetic, which may not read as distinctively Art Deco as a fully bespoke piece.</div>
+  </div>
+
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;margin:2.5rem 0 1rem;letter-spacing:-0.01em;">Disqualifications for transparency</h3>
+  <table class="regs-table">
+    <thead>
+      <tr><th>Candidate</th><th>Why eliminated</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Beatson Clark (UK)</strong></td><td>Public minimum custom run: 300,000 units; 150,000 for embossed standard. Three hundred times Pantheon's first order. <span class="warning-tag">Hard fail</span></td></tr>
+      <tr><td><strong>Ardagh Group</strong></td><td>Volume commodity producer; no credible Art Deco premium catalogue; MOQs 50k+.</td></tr>
+      <tr><td><strong>O-I Glass</strong></td><td>Global commodity giant. Minimum runs 50,000 units; zero Art Deco library. <span class="warning-tag">Hard fail</span></td></tr>
+      <tr><td><strong>Vidrala (Spain)</strong></td><td>Mass-market beer/food/standard spirits. No Art Deco premium offering found.</td></tr>
+      <tr><td><strong>Wiegand-Glas (Germany)</strong></td><td>Catalogue dominated by sub-35cl formats; no 700ml Art Deco stock bottle; no stated low-MOQ policy.</td></tr>
+      <tr><td><strong>Pochet du Courval (France)</strong></td><td>Ultra-luxury perfumery specialist. Typical order values and MOQs (£20+/bottle, 30k+ units) incompatible with the £6/bottle budget at 1,000 units.</td></tr>
+      <tr><td><strong>Bruni Glass / Berlin Packaging</strong></td><td>Packaging distributor, not a direct glassworks. Their "Art Deco gin" example (Four Corners Gin) was a bespoke commission, not a stock item. Adds intermediary margin without solving MOQ.</td></tr>
+      <tr><td><strong>Bormioli Luigi (Italy)</strong></td><td>Premium tableware focus; spirits bottles secondary; no Art Deco 700ml stock library identified.</td></tr>
+      <tr><td><strong>Stölzle Oberglas (Austria)</strong></td><td>Same corporate group as Stoelzle Poland (Primary 1). No independent value.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <span>Pantheon Spirits · Glass &amp; Bottle Sourcing · April 2026</span>
+  <span>Prepared as desk research — quotes to be confirmed</span>
+</footer>
+
+</div>
+
+<script>
+// Tab navigation
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const t = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b===btn));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.panel===t));
+    if (t === 'cost') setTimeout(initBreakevenChart, 100);
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+});
+document.querySelectorAll('.sub-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const t = btn.dataset.sub;
+    const parent = btn.closest('.tab-panel');
+    parent.querySelectorAll('.sub-btn').forEach(b => b.classList.toggle('active', b===btn));
+    parent.querySelectorAll('.sub-panel').forEach(p => p.classList.toggle('active', p.dataset.subpanel===t));
+    if (t === 'cost:breakeven') setTimeout(initBreakevenChart, 100);
+  });
+});
+
+// PDF export
+function exportPDF() {
+  const btnEl = event && event.target;
+  if (btnEl) btnEl.disabled = true;
+  const el = document.getElementById('reportRoot');
+  // Show all tabs for PDF
+  const activePanels = [];
+  document.querySelectorAll('.tab-panel').forEach(p => { if (p.classList.contains('active')) activePanels.push(p); p.classList.add('active'); });
+  document.querySelectorAll('.sub-panel').forEach(p => { p.classList.add('active'); });
+  html2pdf().set({
+    margin: [12, 8, 12, 8],
+    filename: 'odyssey-rum-bottle-supplier-research.pdf',
+    image: { type: 'jpeg', quality: 0.90 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['avoid-all','css','legacy'] }
+  }).from(el).save().then(() => {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    activePanels.forEach(p => p.classList.add('active'));
+    if (btnEl) btnEl.disabled = false;
+  });
+}
+
+// ================ BOTTLE MOCKUPS ================
+const LABEL_LEFT = './assets/label-archers.png';
+const LABEL_RIGHT = './assets/label-quarry.png';
+
+const state = {
+  silhouette: 'classic',
+  label: 'left',
+  shape: 'rect',
+  material: 'paper',
+  closure: 'tcork',
+  path: 'vetreria'
+};
+
+// Unit price logic — based on Cost Breakdown assumptions
+const PATH_COSTS = {
+  vetreria:    { glass: 2.80, mould: 4.50, label:'Vetreria Etrusca · modified Aurea Spirits 700ml' },
+  vetreriaCustom: { glass: 2.95, mould:13.50, label:'Vetreria Etrusca · fully custom mould' },
+  stoelzleUK:  { glass: 3.00, mould: 0.00, label:'Stoelzle UK (Knottingley) · Standard Collection' },
+  stoelzle:    { glass: 3.10, mould:18.00, label:'Stoelzle Poland · fully custom mould' },
+  saverstock:  { glass: 3.40, mould: 0.00, label:'Saverglass · stock SUPREME decanter' },
+  verallia:    { glass: 3.20, mould: 0.00, label:'Verallia UK · Selective Line stock' }
+};
+const CLOSURES = { tcork:0.65, synth:0.45, screw:0.15, glass:1.20 };
+const LABELS_BASE = { paper:0.80, cotton:0.88, foil:0.98 };
+const SHAPE_ADD = { rect:0.00, arch:0.04, diecut:0.12 };
+const FREIGHT = { vetreria:0.50, vetreriaCustom:0.50, stoelzleUK:0.12, stoelzle:0.44, saverstock:0.42, verallia:0.12 };
+const CUSTOMS = { vetreria:0.12, vetreriaCustom:0.12, stoelzleUK:0.00, stoelzle:0.12, saverstock:0.12, verallia:0.00 };
+const BASE_MOD = 0.30;
+// Silhouette mould-complexity premium — applied to mould amortisation line
+// Reflects additional tooling work for more intricate base shapes / deeper embossing
+const SILHOUETTE_PREMIUM = {
+  classic: 0.00,  // baseline
+  wave1:   0.30,  // single wave base = ~+£1.8k tooling
+  wave2:   0.60,  // double wave = ~+£3.6k tooling
+  stepped: 0.45,  // stepped Art Deco base
+  strong:  0.25,  // deeper rib emboss
+  monet:   -0.15  // simpler low-tweak geometry
+};
+
+function computePrice() {
+  const p = PATH_COSTS[state.path];
+  const glass = p.glass;
+  // Silhouette premium only applies when we're actually tooling a mould (mould > 0)
+  const silPremium = p.mould > 0 ? (SILHOUETTE_PREMIUM[state.silhouette] || 0) : 0;
+  const mould = p.mould + silPremium;
+  const baseMod = state.path === 'vetreria' ? BASE_MOD : 0;
+  const freight = FREIGHT[state.path];
+  const customs = CUSTOMS[state.path];
+  const closure = CLOSURES[state.closure];
+  const labels = LABELS_BASE[state.material] + SHAPE_ADD[state.shape];
+  const cartons = 0.25;
+  const total = glass + mould + baseMod + freight + customs + closure + labels + cartons;
+  return { total, glass, mould, baseMod, freight, customs, closure, labels, cartons, label:p.label };
+}
+
+function updatePrice() {
+  const c = computePrice();
+  document.getElementById('livePrice').textContent = '£' + c.total.toFixed(2);
+  const closureName = {tcork:'T-cork', synth:'synthetic bar', screw:'screw cap', glass:'glass stopper'}[state.closure];
+  const matName = {paper:'paper label', cotton:'cotton label', foil:'foil-stamped label'}[state.material];
+  const silhouetteName = {classic:'Classic Deco', wave1:'Single Wave', wave2:'Double Wave', stepped:'Stepped Deco', strong:'Strong Ribs', monet:'Aurea-Spec'}[state.silhouette];
+  document.getElementById('livePriceSub').textContent = c.label + ' · ' + silhouetteName + ' · ' + matName + ' · ' + closureName;
+  const stack = document.getElementById('livePriceStack');
+  const f = v => '£' + v.toFixed(2);
+  const silPremium = SILHOUETTE_PREMIUM[state.silhouette] || 0;
+  stack.innerHTML = `
+    <span>Glass body + emboss</span><span>${f(c.glass)}</span>
+    <span>Mould amortisation <span style="opacity:0.6">(${silhouetteName}${silPremium !== 0 ? ', ' + (silPremium > 0 ? '+' : '') + f(silPremium).replace('£','£') : ''})</span></span><span>${f(c.mould)}</span>
+    ${c.baseMod > 0 ? `<span>Base modification (wave)</span><span>${f(c.baseMod)}</span>` : ''}
+    <span>Freight + customs</span><span>${f(c.freight + c.customs)}</span>
+    <span>Closure (${closureName})</span><span>${f(c.closure)}</span>
+    <span>Labels (${matName.replace(' label','')})</span><span>${f(c.labels)}</span>
+    <span>Cartons + seal</span><span>${f(c.cartons)}</span>
+  `;
+}
+
+// === SVG bottle renderer ===
+// Returns a complete SVG string for a given silhouette + current state.
+function renderBottle(variant, size='large') {
+  const isLarge = size === 'large';
+  const W = isLarge ? 360 : 80;
+  const H = isLarge ? 540 : 120;
+  const ribStroke = isLarge ? 1.4 : 0.5;
+
+  // Colours
+  const glass1 = 'rgba(235,245,255,0.45)';
+  const glass2 = 'rgba(200,225,240,0.32)';
+  const glassEdge = 'rgba(120,160,185,0.7)';
+  const glassInner = 'rgba(160,190,210,0.4)';
+
+  // Variant geometry. All variants are rectangular 700ml Art Deco style.
+  // Using 'large' canvas coordinates, scale = H/540.
+  const sc = H / 540;
+
+  // Common: neck + T-cork top
+  const neckY = 30 * sc;
+  const neckH = 40 * sc;
+  const corkW = 50 * sc;
+  const corkH = 22 * sc;
+  const neckW = 52 * sc;
+  const neckCX = W/2;
+
+  // Body dimensions
+  const bodyX1 = 70 * (isLarge ? 1 : W/360);
+  const bodyX2 = W - bodyX1;
+  const bodyY1 = neckY + neckH + 20*sc; // shoulder
+  const bodyW = bodyX2 - bodyX1;
+
+  // Variant-specific
+  const variantDefs = {
+    classic: {
+      baseHeight: 30*sc,
+      baseStyle: 'flat',
+      ribDepth: 3*sc,
+      ribCount: 7,
+      description: 'Classic Deco',
+      price: '£8.10'
+    },
+    wave1: {
+      baseHeight: 50*sc,
+      baseStyle: 'wave1',
+      ribDepth: 3*sc,
+      ribCount: 7,
+      description: 'Single Wave',
+      price: '£8.40'
+    },
+    wave2: {
+      baseHeight: 60*sc,
+      baseStyle: 'wave2',
+      ribDepth: 3*sc,
+      ribCount: 7,
+      description: 'Double Wave',
+      price: '£8.55'
+    },
+    stepped: {
+      baseHeight: 60*sc,
+      baseStyle: 'stepped',
+      ribDepth: 4*sc,
+      ribCount: 7,
+      description: 'Stepped Deco',
+      price: '£8.45'
+    },
+    strong: {
+      baseHeight: 40*sc,
+      baseStyle: 'flat',
+      ribDepth: 5.5*sc,
+      ribCount: 9,
+      description: 'Strong Ribs',
+      price: '£8.35'
+    },
+    monet: {
+      baseHeight: 35*sc,
+      baseStyle: 'thickflat',
+      ribDepth: 2.5*sc,
+      ribCount: 6,
+      description: 'Aurea-Spec',
+      price: '£7.95'
+    }
+  };
+  const v = variantDefs[variant] || variantDefs.classic;
+  const bodyY2 = H - 10*sc - v.baseHeight;
+
+  // Build body path with art deco chamfered corners (top + base of body)
+  const shoulderY = bodyY1;
+  const baseY = bodyY2;
+  const chamfer = 10*sc;
+
+  const bodyPath = `
+    M ${bodyX1+chamfer} ${shoulderY}
+    L ${bodyX1} ${shoulderY+chamfer}
+    L ${bodyX1} ${baseY-chamfer}
+    L ${bodyX1+chamfer} ${baseY}
+    L ${bodyX2-chamfer} ${baseY}
+    L ${bodyX2} ${baseY-chamfer}
+    L ${bodyX2} ${shoulderY+chamfer}
+    L ${bodyX2-chamfer} ${shoulderY}
+    Z
+  `;
+
+  // Shoulder curve from neck to body
+  const shoulderPath = `
+    M ${neckCX - neckW/2} ${neckY+neckH}
+    Q ${neckCX - neckW/2 - 30*sc} ${neckY+neckH+5*sc} ${bodyX1+chamfer} ${shoulderY}
+    L ${bodyX2-chamfer} ${shoulderY}
+    Q ${neckCX + neckW/2 + 30*sc} ${neckY+neckH+5*sc} ${neckCX + neckW/2} ${neckY+neckH}
+    Z
+  `;
+
+  // Vertical ribs on SIDES only (front panel stays flat for label)
+  // Left ribs at leftmost edge, right ribs at rightmost edge; gap in middle for label panel
+  const ribsLeft = [];
+  const ribsRight = [];
+  const sidePanelW = 18*sc; // edge-zone width containing ribs
+  const ribCountPerSide = 3;
+  const ribLeftStart = bodyX1 + 3*sc;
+  const ribRightStart = bodyX2 - sidePanelW - 3*sc;
+  for (let i=0; i<ribCountPerSide; i++) {
+    const off = i * (sidePanelW/ribCountPerSide);
+    ribsLeft.push(ribLeftStart + off);
+    ribsRight.push(ribRightStart + off);
+  }
+
+  // Base shape variation
+  let baseShape = '';
+  const baseStartY = baseY;
+  const baseEndY = H - 10*sc;
+  if (v.baseStyle === 'flat') {
+    baseShape = `
+      M ${bodyX1+chamfer} ${baseStartY}
+      L ${bodyX1} ${baseStartY+chamfer}
+      L ${bodyX1} ${baseEndY-chamfer}
+      L ${bodyX1+chamfer} ${baseEndY}
+      L ${bodyX2-chamfer} ${baseEndY}
+      L ${bodyX2} ${baseEndY-chamfer}
+      L ${bodyX2} ${baseStartY+chamfer}
+      L ${bodyX2-chamfer} ${baseStartY}
+      Z
+    `;
+  } else if (v.baseStyle === 'thickflat') {
+    baseShape = `
+      M ${bodyX1} ${baseStartY}
+      L ${bodyX1} ${baseEndY-chamfer}
+      L ${bodyX1+chamfer} ${baseEndY}
+      L ${bodyX2-chamfer} ${baseEndY}
+      L ${bodyX2} ${baseEndY-chamfer}
+      L ${bodyX2} ${baseStartY}
+      Z
+    `;
+  } else if (v.baseStyle === 'wave1') {
+    const waveMidY = baseStartY + (baseEndY-baseStartY)*0.55;
+    const ctrl = 14*sc;
+    baseShape = `
+      M ${bodyX1} ${baseStartY}
+      L ${bodyX1} ${baseEndY-chamfer}
+      L ${bodyX1+chamfer} ${baseEndY}
+      L ${bodyX2-chamfer} ${baseEndY}
+      L ${bodyX2} ${baseEndY-chamfer}
+      L ${bodyX2} ${baseStartY}
+      Q ${bodyX1 + bodyW*0.75} ${baseStartY + ctrl} ${bodyX1 + bodyW*0.5} ${waveMidY}
+      Q ${bodyX1 + bodyW*0.25} ${baseStartY - ctrl*0.6} ${bodyX1} ${baseStartY}
+      Z
+    `;
+  } else if (v.baseStyle === 'wave2') {
+    baseShape = `
+      M ${bodyX1} ${baseStartY}
+      L ${bodyX1} ${baseEndY-chamfer}
+      L ${bodyX1+chamfer} ${baseEndY}
+      L ${bodyX2-chamfer} ${baseEndY}
+      L ${bodyX2} ${baseEndY-chamfer}
+      L ${bodyX2} ${baseStartY}
+      Z
+    `;
+  } else if (v.baseStyle === 'stepped') {
+    const s = 12*sc;
+    baseShape = `
+      M ${bodyX1} ${baseStartY}
+      L ${bodyX1} ${baseStartY+s}
+      L ${bodyX1-s*0.3} ${baseStartY+s}
+      L ${bodyX1-s*0.3} ${baseStartY+s*2}
+      L ${bodyX1} ${baseStartY+s*2}
+      L ${bodyX1} ${baseEndY-chamfer}
+      L ${bodyX1+chamfer} ${baseEndY}
+      L ${bodyX2-chamfer} ${baseEndY}
+      L ${bodyX2} ${baseEndY-chamfer}
+      L ${bodyX2} ${baseStartY+s*2}
+      L ${bodyX2+s*0.3} ${baseStartY+s*2}
+      L ${bodyX2+s*0.3} ${baseStartY+s}
+      L ${bodyX2} ${baseStartY+s}
+      L ${bodyX2} ${baseStartY}
+      Z
+    `;
+  }
+
+  // Label positioning
+  const labelW = bodyW * 0.60;
+  const labelH = (baseY - shoulderY) * 0.72;
+  const labelX = neckCX - labelW/2;
+  const labelY = shoulderY + (baseY - shoulderY - labelH)/2;
+
+  let labelSVG = '';
+  let labelFrameSVG = '';
+  const labelSrc = state.label === 'left' ? LABEL_LEFT : state.label === 'right' ? LABEL_RIGHT : null;
+
+  // Build the Art Deco frame around the label area — always visible (even without a label image)
+  // Thin outer frame lines forming a rectangle around the label panel, matching the Art Deco brief
+  const frameInset = 4*sc; // how far outside the label the frame sits
+  const frameX1 = labelX - frameInset;
+  const frameY1 = labelY - frameInset;
+  const frameX2 = labelX + labelW + frameInset;
+  const frameY2 = labelY + labelH + frameInset;
+  const frameStroke = isLarge ? 'rgba(100,140,165,0.55)' : 'rgba(100,140,165,0.65)';
+  const frameStrokeW = isLarge ? 1.2 : 0.4;
+  // Outer frame: full rectangle
+  labelFrameSVG += `<rect x="${frameX1}" y="${frameY1}" width="${frameX2-frameX1}" height="${frameY2-frameY1}" fill="none" stroke="${frameStroke}" stroke-width="${frameStrokeW}" />`;
+  // Inner frame: slightly inset, classic Art Deco double-line framing
+  const innerInset = 2.2*sc;
+  labelFrameSVG += `<rect x="${frameX1+innerInset}" y="${frameY1+innerInset}" width="${frameX2-frameX1-innerInset*2}" height="${frameY2-frameY1-innerInset*2}" fill="none" stroke="${frameStroke}" stroke-width="${frameStrokeW*0.7}" opacity="0.7" />`;
+  // Small Art Deco corner accents at each corner
+  if (isLarge) {
+    const cornerLen = 8*sc;
+    [[frameX1, frameY1, 1, 1], [frameX2, frameY1, -1, 1], [frameX1, frameY2, 1, -1], [frameX2, frameY2, -1, -1]].forEach(([cx, cy, dx, dy]) => {
+      labelFrameSVG += `<line x1="${cx}" y1="${cy}" x2="${cx+dx*cornerLen}" y2="${cy}" stroke="${frameStroke}" stroke-width="${frameStrokeW*1.2}" />`;
+      labelFrameSVG += `<line x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy+dy*cornerLen}" stroke="${frameStroke}" stroke-width="${frameStrokeW*1.2}" />`;
+    });
+  }
+
+  if (labelSrc) {
+    // Apply texture filter for cotton/foil
+    let filterAttr = '';
+    if (state.material === 'cotton') filterAttr = ' filter="url(#cotton-tex)"';
+    if (state.material === 'foil') filterAttr = ' filter="url(#foil-sheen)"';
+
+    // Label background (paper/cream) behind the image
+    const paperBg = '#FFEFE5';
+
+    // For arch and die-cut, we apply a clip-path to a group wrapping both background + image.
+    // For default rect, no clip needed — render background rect + image directly.
+    if (state.shape === 'arch') {
+      const clipId = 'arch_' + variant + '_' + size + '_' + Math.floor(Math.random()*1000000);
+      labelSVG = `
+        <clipPath id="${clipId}">
+          <path d="M ${labelX} ${labelY + labelH*0.22} Q ${labelX + labelW/2} ${labelY - labelH*0.08} ${labelX + labelW} ${labelY + labelH*0.22} L ${labelX + labelW} ${labelY + labelH} L ${labelX} ${labelY + labelH} Z" />
+        </clipPath>
+        <g clip-path="url(#${clipId})">
+          <rect x="${labelX}" y="${labelY}" width="${labelW}" height="${labelH}" fill="${paperBg}" />
+          <image href="${labelSrc}" xlink:href="${labelSrc}" x="${labelX}" y="${labelY}" width="${labelW}" height="${labelH}" preserveAspectRatio="xMidYMid slice"${filterAttr} />
+        </g>
+      `;
+    } else if (state.shape === 'diecut') {
+      const clipId = 'dc_' + variant + '_' + size + '_' + Math.floor(Math.random()*1000000);
+      const sc2 = labelH*0.035;
+      labelSVG = `
+        <clipPath id="${clipId}">
+          <path d="M ${labelX} ${labelY+sc2} Q ${labelX+labelW*0.15} ${labelY} ${labelX+labelW*0.3} ${labelY+sc2} Q ${labelX+labelW*0.5} ${labelY-sc2} ${labelX+labelW*0.7} ${labelY+sc2} Q ${labelX+labelW*0.85} ${labelY} ${labelX+labelW} ${labelY+sc2} L ${labelX+labelW} ${labelY+labelH-sc2} Q ${labelX+labelW*0.85} ${labelY+labelH} ${labelX+labelW*0.7} ${labelY+labelH-sc2} Q ${labelX+labelW*0.5} ${labelY+labelH+sc2} ${labelX+labelW*0.3} ${labelY+labelH-sc2} Q ${labelX+labelW*0.15} ${labelY+labelH} ${labelX} ${labelY+labelH-sc2} Z" />
+        </clipPath>
+        <g clip-path="url(#${clipId})">
+          <rect x="${labelX}" y="${labelY}" width="${labelW}" height="${labelH}" fill="${paperBg}" />
+          <image href="${labelSrc}" xlink:href="${labelSrc}" x="${labelX}" y="${labelY}" width="${labelW}" height="${labelH}" preserveAspectRatio="xMidYMid slice"${filterAttr} />
+        </g>
+      `;
+    } else {
+      // Default rectangular — no clip-path, direct rendering
+      labelSVG = `
+        <rect x="${labelX}" y="${labelY}" width="${labelW}" height="${labelH}" fill="${paperBg}" />
+        <image href="${labelSrc}" xlink:href="${labelSrc}" x="${labelX}" y="${labelY}" width="${labelW}" height="${labelH}" preserveAspectRatio="xMidYMid slice"${filterAttr} />
+      `;
+    }
+  }
+
+  // Ribs - only on sides
+  let ribSVG = '';
+  if (isLarge) {
+    ribsLeft.forEach((x, i) => {
+      ribSVG += `<line x1="${x}" y1="${shoulderY+chamfer*1.2}" x2="${x}" y2="${baseY-chamfer*1.2}" stroke="rgba(100,140,165,0.55)" stroke-width="${ribStroke}" />`;
+    });
+    ribsRight.forEach((x, i) => {
+      ribSVG += `<line x1="${x}" y1="${shoulderY+chamfer*1.2}" x2="${x}" y2="${baseY-chamfer*1.2}" stroke="rgba(100,140,165,0.55)" stroke-width="${ribStroke}" />`;
+    });
+  } else {
+    // Simplified ribs for thumbnail
+    ribSVG = `<line x1="${bodyX1+3}" y1="${shoulderY+3}" x2="${bodyX1+3}" y2="${baseY-3}" stroke="rgba(100,140,165,0.6)" stroke-width="0.4" />
+              <line x1="${bodyX2-3}" y1="${shoulderY+3}" x2="${bodyX2-3}" y2="${baseY-3}" stroke="rgba(100,140,165,0.6)" stroke-width="0.4" />`;
+  }
+
+  // Wave ripple inside base if wave variant
+  let waveDetail = '';
+  if (v.baseStyle === 'wave1' && isLarge) {
+    const wy = baseY + v.baseHeight*0.4;
+    waveDetail = `<path d="M ${bodyX1+5*sc} ${wy} Q ${bodyX1+bodyW*0.25} ${wy-8*sc} ${bodyX1+bodyW*0.5} ${wy} T ${bodyX2-5*sc} ${wy}" fill="none" stroke="rgba(100,140,165,0.45)" stroke-width="${ribStroke*1.3}" />`;
+  } else if (v.baseStyle === 'wave2' && isLarge) {
+    const wy1 = baseY + v.baseHeight*0.3;
+    const wy2 = baseY + v.baseHeight*0.6;
+    waveDetail = `
+      <path d="M ${bodyX1+5*sc} ${wy1} Q ${bodyX1+bodyW*0.25} ${wy1-7*sc} ${bodyX1+bodyW*0.5} ${wy1} T ${bodyX2-5*sc} ${wy1}" fill="none" stroke="rgba(100,140,165,0.45)" stroke-width="${ribStroke*1.2}" />
+      <path d="M ${bodyX1+5*sc} ${wy2} Q ${bodyX1+bodyW*0.25} ${wy2+7*sc} ${bodyX1+bodyW*0.5} ${wy2} T ${bodyX2-5*sc} ${wy2}" fill="none" stroke="rgba(100,140,165,0.4)" stroke-width="${ribStroke*1.2}" />
+    `;
+  }
+
+  // Cork
+  let corkSVG = '';
+  if (state.closure === 'tcork' || state.closure === 'synth') {
+    // T-cork
+    const corkTopW = corkW;
+    const corkStemW = 36*sc;
+    const corkTopH = 10*sc;
+    const corkStemH = 18*sc;
+    const corkTopY = neckY - corkTopH;
+    corkSVG = `
+      <rect x="${neckCX - corkStemW/2}" y="${corkTopY + corkTopH}" width="${corkStemW}" height="${corkStemH}" fill="#B08A5C" opacity="0.9" />
+      <rect x="${neckCX - corkTopW/2}" y="${corkTopY}" width="${corkTopW}" height="${corkTopH}" fill="${state.closure==='tcork'?'#4A352A':'#7A5A3E'}" rx="1" />
+      <rect x="${neckCX - corkTopW/2}" y="${corkTopY}" width="${corkTopW}" height="2.5" fill="rgba(255,255,255,0.2)" rx="1" />
+    `;
+  } else if (state.closure === 'screw') {
+    const capW = 44*sc, capH = 26*sc;
+    const capY = neckY - capH;
+    corkSVG = `
+      <rect x="${neckCX - capW/2}" y="${capY}" width="${capW}" height="${capH}" fill="#2C2824" rx="1.5" />
+      <rect x="${neckCX - capW/2 + 2}" y="${capY+3}" width="${capW-4}" height="2" fill="rgba(255,255,255,0.15)" />
+      <rect x="${neckCX - capW/2 + 2}" y="${capY+capH-5}" width="${capW-4}" height="2" fill="rgba(0,0,0,0.3)" />
+    `;
+  } else if (state.closure === 'glass') {
+    const gsW = 48*sc, gsH = 30*sc;
+    const gsY = neckY - gsH;
+    corkSVG = `
+      <ellipse cx="${neckCX}" cy="${gsY+gsH}" rx="${gsW/2}" ry="${3*sc}" fill="rgba(180,210,230,0.5)" stroke="${glassEdge}" stroke-width="0.8" />
+      <path d="M ${neckCX-gsW*0.35} ${gsY+gsH} C ${neckCX-gsW*0.4} ${gsY+gsH*0.3}, ${neckCX-gsW*0.15} ${gsY}, ${neckCX} ${gsY} C ${neckCX+gsW*0.15} ${gsY}, ${neckCX+gsW*0.4} ${gsY+gsH*0.3}, ${neckCX+gsW*0.35} ${gsY+gsH} Z" fill="rgba(220,235,245,0.7)" stroke="${glassEdge}" stroke-width="0.8" />
+    `;
+  }
+
+  return `
+    <svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:block;max-width:100%;height:auto">
+
+      <defs>
+        <linearGradient id="glassFill_${variant}" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="${glass1}" />
+          <stop offset="0.5" stop-color="${glass2}" />
+          <stop offset="1" stop-color="${glass1}" />
+        </linearGradient>
+        <linearGradient id="glassBase_${variant}" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0" stop-color="rgba(200,220,235,0.55)" />
+          <stop offset="1" stop-color="rgba(140,175,200,0.72)" />
+        </linearGradient>
+        <filter id="cotton-tex" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="3" result="noise" />
+          <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0.8  0 0 0 0 0.78  0 0 0 0 0.74  0 0 0 0.18 0" result="monoNoise" />
+          <feComposite in="SourceGraphic" in2="monoNoise" operator="arithmetic" k1="0" k2="1" k3="0.06" k4="0" />
+        </filter>
+        <filter id="foil-sheen" x="0" y="0" width="100%" height="100%">
+          <feColorMatrix type="matrix" values="1.05 0 0 0 0.02  0 1.03 0 0 0.02  0 0 0.95 0 0  0 0 0 1 0" />
+        </filter>
+      </defs>
+      <!-- Body -->
+      <path d="${bodyPath}" fill="url(#glassFill_${variant})" stroke="${glassEdge}" stroke-width="${ribStroke}" />
+      <!-- Shoulder -->
+      <path d="${shoulderPath}" fill="url(#glassFill_${variant})" stroke="${glassEdge}" stroke-width="${ribStroke}" />
+      <!-- Neck -->
+      <rect x="${neckCX - neckW/2}" y="${neckY}" width="${neckW}" height="${neckH+2*sc}" fill="url(#glassFill_${variant})" stroke="${glassEdge}" stroke-width="${ribStroke}" rx="1" />
+      <!-- Neck rim flare -->
+      <rect x="${neckCX - neckW/2 - 3*sc}" y="${neckY}" width="${neckW + 6*sc}" height="${6*sc}" fill="url(#glassFill_${variant})" stroke="${glassEdge}" stroke-width="${ribStroke}" rx="1" />
+      <!-- Cork/closure -->
+      ${corkSVG}
+      <!-- Ribs -->
+      ${ribSVG}
+      <!-- Base -->
+      <path d="${baseShape}" fill="url(#glassBase_${variant})" stroke="${glassEdge}" stroke-width="${ribStroke}" />
+      ${waveDetail}
+      <!-- Inner highlight on left edge -->
+      <line x1="${bodyX1 + 4*sc}" y1="${shoulderY + chamfer}" x2="${bodyX1 + 4*sc}" y2="${baseY - chamfer}" stroke="rgba(255,255,255,0.55)" stroke-width="${ribStroke*1.5}" opacity="0.65" />
+      <line x1="${bodyX2 - 4*sc}" y1="${shoulderY + chamfer}" x2="${bodyX2 - 4*sc}" y2="${baseY - chamfer}" stroke="rgba(255,255,255,0.25)" stroke-width="${ribStroke}" opacity="0.5" />
+      <!-- Art Deco frame around label area -->
+      ${labelFrameSVG}
+      <!-- Label image -->
+      ${labelSVG}
+    </svg>
+  `;
+}
+
+const VARIANTS = [
+  { key:'classic', name:'Classic Deco' },
+  { key:'wave1',   name:'Single Wave' },
+  { key:'wave2',   name:'Double Wave' },
+  { key:'stepped', name:'Stepped Deco' },
+  { key:'strong',  name:'Strong Ribs' },
+  { key:'monet',   name:'Aurea-Spec' }
+];
+
+// Compute per-variant price at the CURRENT state (path/closure/material/shape) for thumbnail display
+function variantPrice(key) {
+  const prev = state.silhouette;
+  state.silhouette = key;
+  const price = computePrice().total;
+  state.silhouette = prev;
+  return '£' + price.toFixed(2);
+}
+
+function renderBottleView() {
+  document.getElementById('bottleSvgWrap').innerHTML = renderBottle(state.silhouette, 'large');
+}
+
+function renderVariantGrid() {
+  const grid = document.getElementById('silhouetteGrid');
+  grid.innerHTML = VARIANTS.map(v => `
+    <div class="variant-chip ${v.key===state.silhouette?'active':''}" data-variant="${v.key}">
+      ${renderBottle(v.key, 'small')}
+      <span class="variant-name">${v.name}</span>
+      <span class="variant-price">${variantPrice(v.key)}</span>
+    </div>
+  `).join('');
+  grid.querySelectorAll('.variant-chip').forEach(el => {
+    el.addEventListener('click', () => {
+      state.silhouette = el.dataset.variant;
+      renderVariantGrid();
+      renderBottleView();
+      updatePrice();
+    });
+  });
+}
+
+document.querySelectorAll('[data-label]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-label]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); state.label = b.dataset.label; renderBottleView();
+}));
+document.querySelectorAll('[data-shape]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-shape]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); state.shape = b.dataset.shape; renderBottleView(); updatePrice(); renderVariantGrid();
+}));
+document.querySelectorAll('[data-material]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-material]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); state.material = b.dataset.material; renderBottleView(); updatePrice(); renderVariantGrid();
+}));
+document.querySelectorAll('[data-closure]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-closure]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); state.closure = b.dataset.closure; renderBottleView(); updatePrice(); renderVariantGrid();
+}));
+document.querySelectorAll('[data-path]').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('[data-path]').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); state.path = b.dataset.path; updatePrice(); renderVariantGrid();
+}));
+
+// Label swap button
+document.getElementById('labelSwapBtn').addEventListener('click', () => {
+  if (state.label === 'left') state.label = 'right';
+  else state.label = 'left';
+  // Update the chip active state
+  document.querySelectorAll('[data-label]').forEach(x => x.classList.toggle('active', x.dataset.label === state.label));
+  renderBottleView();
+  renderVariantGrid();
+});
+
+renderVariantGrid();
+renderBottleView();
+updatePrice();
+
+// Also update variant grid when label changes
+document.querySelectorAll('[data-label]').forEach(b => b.addEventListener('click', () => {
+  renderVariantGrid();
+}));
+
+// ================ BREAK-EVEN CHART ================
+let breakevenChart = null;
+function initBreakevenChart() {
+  const canvas = document.getElementById('breakevenChart');
+  if (!canvas || breakevenChart) return;
+  const ctx = canvas.getContext('2d');
+  const volumes = [5000, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000];
+  const modified = volumes.map(v => 4500/v);
+  const custom = volumes.map(v => 18000/v);
+  breakevenChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: volumes.map(v => v.toLocaleString()),
+      datasets: [
+        {
+          label: 'Vetreria modified mould (£4.5k tooling)',
+          data: modified,
+          borderColor: '#7A4820',
+          backgroundColor: 'rgba(122,72,32,0.08)',
+          borderWidth: 2.5,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Stoelzle custom mould (£18k tooling)',
+          data: custom,
+          borderColor: '#9B3C2E',
+          backgroundColor: 'rgba(155,60,46,0.08)',
+          borderWidth: 2.5,
+          tension: 0.3,
+          fill: true,
+          borderDash: [6,4]
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { family: 'Inter', size: 12 } } },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.dataset.label + ': £' + ctx.parsed.y.toFixed(3) + '/bottle'
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Annual volume (bottles)', font: { family: 'Inter', size: 12 } },
+          ticks: { font: { family: 'JetBrains Mono', size: 10 } }
+        },
+        y: {
+          title: { display: true, text: 'Mould cost per bottle (£)', font: { family: 'Inter', size: 12 } },
+          ticks: {
+            callback: v => '£' + v.toFixed(2),
+            font: { family: 'JetBrains Mono', size: 10 }
+          }
+        }
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>
