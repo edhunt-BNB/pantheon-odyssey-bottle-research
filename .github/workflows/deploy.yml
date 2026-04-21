@@ -1,0 +1,38 @@
+name: Deploy Pantheon bottle research
+on:
+  push:
+    paths:
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download assets
+        run: |
+          mkdir -p assets
+          curl -L -f -o index.html "https://pub.hyperagent.com/api/published/BU8j2BewUKgOJhNr3pjKfw/pantheon-odyssey-index.html.txt"
+          curl -L -f -o assets/label-archers.png "https://pub.hyperagent.com/api/published/3TJ3Rq_MQ8vC14JZ-PhewA/pantheon-label-archers.png"
+          curl -L -f -o assets/label-quarry.png "https://pub.hyperagent.com/api/published/sc3kkFAAa83wNreyG8W0ng/pantheon-label-quarry.png"
+          ls -la index.html assets/
+      - name: Commit assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Deploy Pantheon bottle research (HTML + label assets)"
+          git push
+      - name: Remove deployment workflow
+        run: |
+          git rm .github/workflows/deploy.yml
+          git commit -m "Remove one-shot deployment workflow"
+          git push
